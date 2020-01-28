@@ -1,0 +1,667 @@
+"TextosFijos"1|DATE:|
+"TextosFijos"2|VALID:|
+"TextosFijos"3|WT   (kg)UNITS|
+"TextosFijos"4|$/kg $/U|
+"TextosFijos"5|TOTAL($)|
+"TextosFijos"6|DATE:|
+"TextosFijos"7|TIME:|
+"TextosFijos"8|WT  (kg) WT (U)|
+"TextosFijos"9|TOTAL($)|
+"TextosFijos"10|Gracias por su visita|
+"TextosFijos"11|*******************************|
+"TextosFijos"12|PYMT($)|
+"TextosFijos"13|CHANGE($)|
+"TextosFijos"14|******** RECEIPT COPY *********|
+"TextosFijos"15|TOTAL      ART.|
+"TextosFijos"16|ART.|
+"TextosFijos"17|kg        $/kg         $|
+"TextosFijos"18|U         $/U          $|
+"TextosFijos"19|VND:|
+"TextosFijos"20|Peso total|
+"TextosFijos"101|Power value|
+"TextosFijos"102|Carbohydrates|
+"TextosFijos"103|Proteins|
+"TextosFijos"104|Total fats|
+"TextosFijos"105|Saturated fats|
+"TextosFijos"106|Trans fats|
+"TextosFijos"107|Nourishing fiber|
+"TextosFijos"108|Sodium|
+"TextosFijos"109|Vitamin A|
+"TextosFijos"110|Vitamin D|
+"TextosFijos"111|Vitamin C|
+"TextosFijos"112|Vitamin E|
+"TextosFijos"113|Tiamina|
+"TextosFijos"114|Riboflavina|
+"TextosFijos"115|Niacina|
+"TextosFijos"116|Vitamin B6|
+"TextosFijos"117|Fólico acid|
+"TextosFijos"118|Vitamin B12|
+"TextosFijos"119|Biotina|
+"TextosFijos"120|Pantoténico acid|
+"TextosFijos"121|Calcium|
+"TextosFijos"122|Iron|
+"TextosFijos"123|Magnesium|
+"TextosFijos"124|Zinc|
+"TextosFijos"125|Iodine|
+"TextosFijos"126|Vitamin K|
+"TextosFijos"127|Phosphorus|
+"TextosFijos"128|Fluor|
+"TextosFijos"129|Copper|
+"TextosFijos"130|Selenium|
+"TextosFijos"131|Molybdenum|
+"TextosFijos"132|Chromium|
+"TextosFijos"133|Manganese|
+"TextosFijos"134|Hill|
+"TextosFijos"135|NUTRICIONAL INFORMATION|
+"TextosFijos"136|Portion 100g (4 film)|
+"TextosFijos"137||
+"TextosFijos"138|Portion amount|
+"TextosFijos"139|%VD(*)|
+"TextosFijos"140|SUBTOTAL|
+"TextosFijos"141|TAX|
+"TextosFijos"142|BATCH|
+"TextosFijos"143|$/g|
+"SecEquipos"1|1|
+"TeclasDirectas"1|40|1|5|22|0|
+"TeclasDirectas"1|46|1|5|21|0|
+"TeclasDirectas"1|4C|1|5|20|0|
+"Vendedores"1|Nico 1|
+"Vendedores"2|Masi 2|
+"Vendedores"3|Caro 3|
+"Vendedores"4|Agus 4|
+"Empresas"1|Carniceria|******|0|1|1|
+"Monedas"1|Pesos|$|2|1.00000|
+"Publicidades"1|Gracias por su compra|1|0|0|
+"Publicidades"2|Que tenga un buen día|1|0|0|
+"Horarios"1|1|All day|00:01|24:00|
+"PublicidadEquipos"1|1|1|
+"PublicidadEquipos"1|2|1|
+"Equipos"1|Bal1|4000|99998|TCP/IP|192.168.5.77|9101|0|AR|1.00|1|1|1|
+"TeclasVendedores"1|1|1|
+"TeclasVendedores"1|2|2|
+"TeclasVendedores"1|3|3|
+"TeclasVendedores"1|4|4|
+"Parametros"100|10|0|0|
+"Parametros"100|15|0|true|
+"Parametros"100|20|0|true|
+"Parametros"100|25|0|false|
+"Parametros"100|30|0|false|
+"Parametros"100|35|0|false|
+"Parametros"100|40|0|false|
+"Parametros"100|45|0|GMT-03:00|
+"Parametros"100|50|0|AR|
+"Parametros"100|60|0|0|
+"Parametros"110|30|0|60|
+"Parametros"110|31|0|20|
+"Parametros"110|32|0|true|
+"Parametros"110|51|0|100|
+"Parametros"110|52|0|01|
+"Parametros"110|100|0|1|
+"Parametros"110|105|0|false|
+"Parametros"110|150|0|20|
+"Parametros"110|155|0|0|
+"Parametros"110|160|0|20|
+"Parametros"110|165|0|0|
+"Parametros"110|170|0|0|
+"Parametros"110|200|0|false|
+"Parametros"110|201|0|1000|
+"Parametros"110|202|0|6|
+"Parametros"110|203|0|false|
+"Parametros"110|204|0|false|
+"Parametros"110|205|0|1|
+"Parametros"110|210|0|3|
+"Parametros"110|210|1|4|
+"Parametros"110|211|0|45|
+"Parametros"110|211|1|45|
+"Parametros"110|212|0|false|
+"Parametros"110|212|1|true|
+"Parametros"110|213|0|false|
+"Parametros"110|213|1|false|
+"Parametros"110|214|0|false|
+"Parametros"110|214|1|false|
+"Parametros"110|215|0|1|
+"Parametros"110|216|0|K|
+"Parametros"110|217|0|false|
+"Parametros"110|218|0|0|
+"Parametros"110|219|0||
+"Parametros"110|220|0||
+"Parametros"110|225|0|false|
+"Parametros"110|230|0|true|
+"Parametros"120|30|0|15|
+"Parametros"120|31|0|15|
+"Parametros"120|35|0|10|
+"Parametros"120|36|0|10|
+"Parametros"120|50|0|50|
+"Parametros"120|51|0|100|
+"Parametros"120|52|0|11|
+"Parametros"120|210|0|false|
+"Parametros"120|211|0|1000|
+"Parametros"120|212|0|0|
+"Parametros"120|213|0||
+"Parametros"120|214|0||
+"Parametros"130|500|0|false|
+"Parametros"130|510|0|false|
+"Parametros"130|511|0|false|
+"Parametros"130|512|0|false|
+"Parametros"130|513|0|false|
+"Parametros"130|520|0|false|
+"Parametros"130|521|0|false|
+"Parametros"130|522|0|false|
+"Parametros"130|530|0|true|
+"Parametros"140|5|0|3|
+"Parametros"140|6|0|3|
+"Parametros"140|7|0|2|
+"Parametros"140|8|0|1|
+"Parametros"140|9|0|2|
+"Parametros"140|10|0|true|
+"Parametros"140|11|0|true|
+"Parametros"140|12|0|30|
+"Parametros"140|13|0|false|
+"Parametros"140|14|0|false|
+"Parametros"140|15|0|false|
+"Parametros"140|16|0|true|
+"Parametros"140|17|0|0|
+"Parametros"140|18|0|false|
+"Parametros"140|19|0|true|
+"Parametros"140|20|0|false|
+"Parametros"140|21|0|0|
+"Parametros"140|22|0|10000000|
+"Parametros"140|23|0|10000000|
+"Parametros"140|24|0|0|
+"Parametros"140|25|0|true|
+"Parametros"140|26|0|true|
+"Parametros"140|27|0|true|
+"Parametros"140|28|0|true|
+"Parametros"140|29|0|true|
+"Parametros"140|30|0|false|
+"Parametros"140|31|0|true|
+"Parametros"140|32|0|0|
+"Parametros"140|33|0|true|
+"Parametros"140|34|0|2|
+"Parametros"140|35|0|true|
+"Parametros"140|36|0|false|
+"Parametros"140|37|0|false|
+"Parametros"140|38|0|false|
+"Parametros"140|39|0|false|
+"Parametros"140|40|0|false|
+"Parametros"140|41|0|90|
+"Parametros"140|42|0|true|
+"Parametros"140|43|0|true|
+"Parametros"140|82|0|0|
+"Parametros"140|83|0|5|
+"Parametros"140|84|0|0|
+"Parametros"140|85|0|true|
+"Parametros"140|1001|0|REGISTRADORA NUMA|
+"Parametros"140|1002|0|KRETZ S.A.|
+"Parametros"140|1003|0||
+"Parametros"140|1004|0||
+"Parametros"140|1005|0||
+"Parametros"140|1006|0||
+"Parametros"140|1007|0||
+"Parametros"140|1008|0||
+"Parametros"140|1009|0||
+"Parametros"140|1010|0||
+"Parametros"140|1021|0||
+"Parametros"140|1022|0||
+"Parametros"140|1023|0||
+"Parametros"140|1024|0||
+"Parametros"140|1025|0||
+"Parametros"140|1026|0||
+"Parametros"140|1027|0||
+"Parametros"140|1028|0||
+"Parametros"140|1029|0||
+"Parametros"140|1030|0||
+"Parametros"150|51|0|100|
+"Parametros"150|91|0|99999|
+"Parametros"150|95|0|2|
+"Parametros"150|100|0|4|
+"Parametros"150|150|0|20|
+"Parametros"150|152|0|20|
+"Parametros"150|155|0|0|
+"Parametros"150|160|0|20|
+"Parametros"150|165|0|0|
+"Parametros"150|170|0|1|
+"Parametros"160|1|0|0|
+"Parametros"160|2|0|1|
+"Parametros"160|3|0|56|
+"Parametros"160|4|0|true|
+"Parametros"160|5|0|0|
+"Parametros"160|6|0|1|
+"Parametros"160|7|0|0|
+"Parametros"160|8|0|1|
+"Parametros"160|9|0|Muchas gracias por su compra|
+"Parametros"160|10|0|true|
+"Parametros"160|11|0|true|
+"Parametros"170|51|0|100|
+"Parametros"170|91|0|99999|
+"Parametros"170|95|0|1|
+"Parametros"170|100|0|0|
+"Parametros"170|150|0|20|
+"Parametros"170|152|0|20|
+"Parametros"170|155|0|0|
+"Parametros"170|160|0|20|
+"Parametros"170|165|0|0|
+"Parametros"170|170|0|1|
+"Parametros"180|51|0|100|
+"Parametros"180|91|0|99999|
+"Parametros"180|95|0|1|
+"Parametros"180|100|0|0|
+"Parametros"200|10|1|false|
+"Parametros"200|15|1|0|
+"Parametros"900|10|0||
+"Parametros"900|15|0|01|
+"Parametros"900|20|0|false|
+"Parametros"900|25|0|false|
+"Parametros"900|30|0||
+"Parametros"900|40|0||
+"Parametros"900|45|0|01|
+"Parametros"900|50|0|false|
+"Parametros"900|55|0|false|
+"Parametros"900|60|0||
+"Parametros"900|70|0|Bakup|
+"Parametros"900|75|0|1|
+"Parametros"900|80|0|txt|
+"Parametros"900|85|0|D:\Balanza|
+"Parametros"900|90|0|0|
+"Parametros"900|95|0|true|
+"Parametros"900|100|0|false|
+"Parametros"900|105|0|1|
+"Parametros"900|110|0|22|
+"Parametros"900|115|0||
+"Parametros"900|130|0||
+"Parametros"900|135|0|01|
+"Parametros"900|140|0|22|
+"Parametros"900|145|0|false|
+"Parametros"900|150|0|false|
+"Parametros"900|155|0||
+"Etiquetas"1|01 - With description(56 mm x 44 mm)|44|56|3|0|
+"Etiquetas"2|02 - With free text (56 mm x 44 mm)|44|56|3|0|
+"Etiquetas"3|03 - Basic information (56 mm x 29 mm)|29|56|3|0|
+"Etiquetas"4|04 - With N.Table.for standard Report(56mm x 64mm)|44|56|3|0|
+"Etiquetas"5|05 - Ticket|38|56|27|0|
+"Etiquetas"6|06 - Line (sale) of ticket|38|56|27|0|
+"Etiquetas"8|08 - Pre impresion Ticket|18|56|0|0|
+"Etiquetas"9|09 - Without PLU (56 mm x 44 mm)|44|56|3|0|
+"Etiquetas"10|10 - Add type (56 mm x 44 mm)|44|56|3|0|
+"Etiquetas"11|11 - Total type (56 mm x 44 mm)|44|56|3|0|
+"Etiquetas"21|21 - With desc.and nutricional table(56mm x 44mm)|92|56|3|0|
+"Etiquetas"22|22 - With free text and nutricional table(56mm x 44mm)|92|56|3|0|
+"Etiquetas"25|25 - With description(56mm x 44mm) and alternative EAN13|44|56|3|0|
+"Etiquetas"90|plura window|64|256|0|1|
+"Etiquetas"99|White ticket|44|56|3|0|
+"Objetos"1|1|4|20|10|0|S|0|4|20|0|1|1|c|
+"Objetos"1|2|5|8|48|0|S|0|3|26|0|1|1|c|
+"Objetos"1|3|2|40|88|0|S|1|1|4|0|1|1|i|
+"Objetos"1|4|6|80|88|0|S|0|2|8|0|1|1|i|
+"Objetos"1|5|3|208|88|0|S|2|1|4|0|1|1|i|
+"Objetos"1|6|9|248|88|0|S|0|2|8|0|1|1|i|
+"Objetos"1|7|1|192|120|0|S|3|1|9|0|1|1|i|
+"Objetos"1|8|10|176|138|0|S|0|3|7|0|1|1|c|
+"Objetos"1|9|1|328|120|0|S|4|1|5|0|1|1|i|
+"Objetos"1|10|11|288|138|0|S|0|3|8|0|1|1|c|
+"Objetos"1|11|14|40|160|0|S|0|1|9|0|1|1|i|
+"Objetos"1|12|0|234|184|0|S|5|2|13|0|1|1|i|
+"Objetos"1|13|12|152|208|0|S|0|5|10|0|1|1|d|
+"Objetos"1|14|1|24|176|0|C|0|0|2|110|2|1|i|
+"Objetos"1|15|26|12|316|0|S|0|2|31|0|1|1|c|
+"Objetos"1|16|27|20|340|0|S|0|1|46|0|1|1|c|
+"Objetos"2|1|4|8|10|0|S|0|3|26|0|1|1|c|
+"Objetos"2|2|18|16|38|0|S|0|1|50|0|1|1|i|
+"Objetos"2|3|19|16|52|0|S|0|1|50|0|1|1|i|
+"Objetos"2|4|20|16|66|0|S|0|1|50|0|1|1|i|
+"Objetos"2|5|21|16|80|0|S|0|1|50|0|1|1|i|
+"Objetos"2|6|2|40|102|0|S|1|1|4|0|1|1|i|
+"Objetos"2|7|6|80|102|0|S|0|2|8|0|1|1|i|
+"Objetos"2|8|3|208|102|0|S|2|1|4|0|1|1|i|
+"Objetos"2|9|9|248|102|0|S|0|2|8|0|1|1|i|
+"Objetos"2|10|1|192|124|0|S|3|1|9|0|1|1|i|
+"Objetos"2|11|10|176|140|0|S|0|3|7|0|1|1|d|
+"Objetos"2|12|1|328|124|0|S|4|1|5|0|1|1|i|
+"Objetos"2|13|11|288|138|0|S|0|3|8|0|1|1|c|
+"Objetos"2|14|14|40|160|0|S|0|1|9|0|1|1|i|
+"Objetos"2|15|0|234|184|0|S|5|2|13|0|1|1|i|
+"Objetos"2|16|12|152|208|0|S|0|5|10|0|1|1|d|
+"Objetos"2|17|1|24|176|0|C|0|0|2|110|2|1|i|
+"Objetos"2|18|26|12|316|0|S|0|2|31|0|1|1|c|
+"Objetos"2|19|27|20|340|0|S|0|1|46|0|1|1|c|
+"Objetos"3|1|4|8|10|0|S|0|3|26|0|1|1|c|
+"Objetos"3|2|2|40|44|0|S|1|1|4|0|1|1|i|
+"Objetos"3|3|6|80|44|0|S|0|2|8|0|1|1|i|
+"Objetos"3|4|3|208|44|0|S|2|1|4|0|1|1|i|
+"Objetos"3|5|9|248|44|0|S|0|2|8|0|1|1|i|
+"Objetos"3|6|1|248|74|0|S|3|1|9|0|1|1|i|
+"Objetos"3|7|10|238|90|0|S|0|3|7|0|1|1|c|
+"Objetos"3|8|1|340|74|0|S|4|1|5|0|1|1|i|
+"Objetos"3|9|11|308|90|0|S|0|3|8|0|1|1|c|
+"Objetos"3|10|14|240|122|0|S|0|1|9|0|1|1|i|
+"Objetos"3|11|0|336|122|0|S|5|1|13|0|1|1|i|
+"Objetos"3|12|12|248|140|0|S|0|4|10|0|1|1|d|
+"Objetos"3|13|1|24|66|0|C|0|0|2|110|1|1|i|
+"Objetos"3|14|26|12|182|0|S|0|2|31|0|1|1|c|
+"Objetos"3|15|27|20|204|0|S|0|1|46|0|1|1|c|
+"Objetos"4|1|4|5|0|0|S|0|4|20|11|1|1|c|
+"Objetos"4|2|26|12|304|0|S|0|2|31|0|1|1|i|
+"Objetos"4|3|27|20|322|0|S|0|1|46|0|1|1|i|
+"Objetos"4|4|18|50|238|0|S|0|1|46|11|1|1|i|
+"Objetos"4|5|19|50|252|0|S|0|1|46|11|1|1|i|
+"Objetos"4|6|20|50|266|0|S|0|1|46|11|1|1|i|
+"Objetos"4|7|21|50|280|0|S|0|1|46|11|1|1|i|
+"Objetos"4|8|6|55|50|0|S|0|2|8|11|1|1|i|
+"Objetos"4|9|9|230|50|0|S|0|2|8|11|1|1|i|
+"Objetos"4|10|1|195|70|0|S|8|1|8|11|1|1|d|
+"Objetos"4|11|0|20|50|0|S|1|1|4|11|1|1|i|
+"Objetos"4|12|0|185|50|0|S|2|1|4|11|1|1|i|
+"Objetos"4|13|10|160|86|0|S|0|3|7|11|1|1|i|
+"Objetos"4|14|0|345|70|0|S|4|1|5|11|1|1|d|
+"Objetos"4|15|11|265|85|0|S|0|3|8|11|1|1|i|
+"Objetos"4|16|1|13|118|0|C|0|2|2|96|2|1|i|
+"Objetos"4|17|0|250|125|0|S|14|2|10|11|1|1|d|
+"Objetos"4|18|12|220|145|0|S|0|5|8|11|1|1|d|
+"Objetos"4|19|0|50|217|0|S|135|2|30|11|1|1|i|
+"Objetos"4|20|0|50|236|0|L|0|0|320|1|2|1|1|
+"Objetos"4|21|14|10|105|0|S|0|1|10|11|1|1|c|
+"Objetos"5|1|0|0|20|0|S|10|2|31|0|1|1|i|
+"Objetos"5|2|0|2|112|0|S|11|2|31|0|1|1|i|
+"Objetos"5|3|26|12|178|0|S|0|2|31|0|1|1|c|
+"Objetos"5|4|27|20|204|0|S|0|1|46|0|1|1|c|
+"Objetos"5|5|0|30|232|0|S|6|2|6|0|1|1|i|
+"Objetos"5|6|6|120|232|0|S|0|2|8|0|1|1|i|
+"Objetos"5|7|16|335|232|0|S|0|2|6|0|1|1|i|
+"Objetos"5|8|0|30|260|0|S|7|2|5|0|1|1|i|
+"Objetos"5|9|8|120|260|0|S|0|2|5|0|1|1|i|
+"Objetos"5|10|0|335|260|0|S|19|2|4|0|1|1|i|
+"Objetos"5|11|15|390|260|0|S|0|2|2|0|1|1|d|
+"Objetos"5|12|63|2|140|0|S|14|2|31|0|1|1|i|
+"Objetos"5|200|17|26|308|0|S|0|2|2|0|1|1|d|
+"Objetos"5|201|0|70|308|0|S|16|2|4|0|1|1|i|
+"Objetos"5|202|0|142|308|0|S|9|3|9|0|1|1|i|
+"Objetos"5|203|12|234|308|0|S|0|3|11|0|1|1|d|
+"Objetos"5|204|1|20|340|0|C|0|0|2|110|1|1|0|
+"Objetos"5|205|61|234|340|0|S|12|2|7|0|1|1|i|
+"Objetos"5|206|59|304|364|0|S|0|2|8|0|1|1|d|
+"Objetos"5|207|62|234|394|0|S|13|2|9|0|1|1|i|
+"Objetos"5|208|60|304|418|0|S|0|2|8|0|1|1|d|
+"Objetos"5|209|0|26|465|0|S|20|2|22|0|1|1|d|
+"Objetos"5|210|69|26|495|0|S|0|2|2|0|1|1|d|
+"Objetos"5|211|0|70|495|0|S|16|2|4|0|1|1|i|
+"Objetos"5|212|70|140|495|0|S|0|2|12|0|1|1|d|
+"Objetos"6|1|55|10|0|0|S|0|2|31|0|1|1|i|
+"Objetos"8|1|0|0|20|0|S|10|2|31|0|1|1|i|
+"Objetos"8|2|0|2|112|0|S|11|2|31|0|1|1|i|
+"Objetos"8|3|63|2|132|0|S|14|2|31|0|1|1|i|
+"Objetos"9|1|1|192|124|0|S|3|1|9|0|1|1|i|
+"Objetos"9|2|10|176|138|0|S|0|3|7|0|1|1|c|
+"Objetos"9|3|1|328|124|0|S|4|1|5|0|1|1|i|
+"Objetos"9|4|11|288|138|0|S|0|3|8|0|1|1|c|
+"Objetos"9|5|0|234|184|0|S|5|2|13|0|1|1|i|
+"Objetos"9|6|12|152|208|0|S|0|5|10|0|1|1|d|
+"Objetos"9|7|26|12|316|0|S|0|2|31|0|1|1|c|
+"Objetos"9|8|27|20|340|0|S|0|1|46|0|1|1|c|
+"Objetos"10|1|0|20|14|0|S|15|4|20|0|1|1|c|
+"Objetos"10|2|17|170|14|0|S|0|4|2|0|1|1|d|
+"Objetos"10|3|0|24|68|0|S|6|1|6|0|1|1|i|
+"Objetos"10|4|6|80|68|0|S|0|2|8|0|1|1|i|
+"Objetos"10|5|0|24|96|0|S|7|1|5|0|1|1|i|
+"Objetos"10|6|8|80|96|0|S|0|2|5|0|1|1|i|
+"Objetos"10|7|0|24|124|0|S|19|1|5|0|1|1|i|
+"Objetos"10|8|15|80|124|0|S|0|2|2|0|1|1|d|
+"Objetos"10|9|16|335|60|0|S|0|2|6|0|1|1|i|
+"Objetos"10|10|61|234|88|0|S|12|2|7|0|1|1|i|
+"Objetos"10|11|59|304|112|0|S|0|2|8|0|1|1|d|
+"Objetos"10|12|62|234|142|0|S|13|2|9|0|1|1|i|
+"Objetos"10|13|60|304|166|0|S|0|2|8|0|1|1|d|
+"Objetos"10|14|0|234|196|0|S|5|2|13|0|1|1|i|
+"Objetos"10|15|12|152|220|0|S|0|5|10|0|1|1|d|
+"Objetos"10|16|1|24|176|0|C|0|0|2|110|1|1|0|
+"Objetos"10|17|26|12|324|0|S|0|2|31|0|1|1|c|
+"Objetos"10|18|27|20|348|0|S|0|1|46|0|1|1|c|
+"Objetos"11|1|5|8|126|0|S|0|3|26|0|1|1|i|
+"Objetos"11|2|4|8|156|0|S|0|3|20|0|1|1|i|
+"Objetos"11|3|7|12|186|0|S|0|2|8|0|1|1|i|
+"Objetos"11|4|18|10|210|0|S|0|2|31|0|1|1|i|
+"Objetos"11|5|19|10|234|0|S|0|2|31|0|1|1|i|
+"Objetos"11|6|20|10|258|0|S|0|2|31|0|1|1|i|
+"Objetos"11|7|26|12|324|0|S|0|2|31|0|1|1|c|
+"Objetos"11|8|27|20|348|0|S|0|1|46|0|1|1|c|
+"Objetos"21|1|4|20|10|0|S|0|4|20|0|1|1|c|
+"Objetos"21|2|5|8|48|0|S|0|3|26|0|1|1|c|
+"Objetos"21|3|2|40|88|0|S|1|1|4|0|1|1|i|
+"Objetos"21|4|6|80|88|0|S|0|2|8|0|1|1|i|
+"Objetos"21|5|3|208|88|0|S|2|1|4|0|1|1|i|
+"Objetos"21|6|9|248|88|0|S|0|2|8|0|1|1|i|
+"Objetos"21|7|1|192|120|0|S|3|1|9|0|1|1|i|
+"Objetos"21|8|10|176|138|0|S|0|3|7|0|1|1|c|
+"Objetos"21|9|1|328|120|0|S|4|1|5|0|1|1|i|
+"Objetos"21|10|11|288|138|0|S|0|3|8|0|1|1|c|
+"Objetos"21|11|14|40|160|0|S|0|1|9|0|1|1|i|
+"Objetos"21|12|0|234|184|0|S|5|2|13|0|1|1|i|
+"Objetos"21|13|12|152|208|0|S|0|5|10|0|1|1|d|
+"Objetos"21|14|1|24|176|0|C|0|0|2|110|1|1|i|
+"Objetos"21|15|26|12|320|0|S|0|2|31|0|1|1|c|
+"Objetos"21|16|27|20|344|0|S|0|1|46|0|1|1|c|
+"Objetos"21|17|4|8|394|0|S|0|3|26|0|1|1|c|
+"Objetos"21|18|0|32|420|0|L|0|0|384|2|1|1|0|
+"Objetos"21|19|0|32|459|0|L|0|0|384|2|1|1|0|
+"Objetos"21|20|0|32|420|0|L|0|0|2|41|1|1|0|
+"Objetos"21|21|0|415|420|0|L|0|0|2|41|1|1|0|
+"Objetos"21|22|30|56|425|0|S|0|2|26|0|1|1|i|
+"Objetos"21|23|31|96|445|0|S|0|1|32|0|1|1|i|
+"Objetos"21|24|32|37|466|0|S|0|1|20|0|1|1|i|
+"Objetos"21|25|33|203|466|0|S|0|1|20|0|1|1|i|
+"Objetos"21|26|34|367|466|0|S|0|1|6|0|1|1|i|
+"Objetos"21|27|26|12|688|0|S|0|2|31|0|1|1|i|
+"Objetos"21|28|27|20|706|0|S|0|1|46|0|1|1|i|
+"Objetos"21|100|0|32|478|0|L|0|0|384|2|1|1|0|
+"Objetos"21|101|0|32|461|0|L|0|0|2|18|1|1|0|
+"Objetos"21|102|0|415|461|0|L|0|0|2|18|1|1|0|
+"Objetos"21|103|0|199|461|0|L|0|0|1|18|1|1|0|
+"Objetos"21|104|0|365|461|0|L|0|0|1|18|1|1|0|
+"Objetos"21|105|38|24|464|0|S|500|1|50|0|1|1|i|
+"Objetos"21|106|39|24|480|0|S|500|1|50|0|1|1|i|
+"Objetos"21|107|40|24|496|0|S|500|1|50|0|1|1|i|
+"Objetos"21|108|41|24|511|0|S|500|1|50|0|1|1|i|
+"Objetos"21|200|0|34|478|0|L|0|0|381|1|1|1|1|
+"Objetos"21|201|35|37|482|0|S|0|1|20|0|1|1|i|
+"Objetos"21|202|36|235|482|0|S|0|1|16|0|1|1|d|
+"Objetos"21|203|37|377|482|0|S|0|1|4|0|1|1|c|
+"Objetos"22|1|4|10|10|0|S|0|3|26|0|1|1|c|
+"Objetos"22|2|18|16|38|0|S|0|1|50|0|1|1|c|
+"Objetos"22|3|19|16|52|0|S|0|1|50|0|1|1|c|
+"Objetos"22|4|20|16|66|0|S|0|1|50|0|1|1|c|
+"Objetos"22|5|21|16|80|0|S|0|1|50|0|1|1|c|
+"Objetos"22|6|2|40|102|0|S|1|1|4|0|1|1|i|
+"Objetos"22|7|6|80|102|0|S|0|2|8|0|1|1|i|
+"Objetos"22|8|3|208|102|0|S|2|1|4|0|1|1|i|
+"Objetos"22|9|9|248|102|0|S|0|2|8|0|1|1|i|
+"Objetos"22|10|1|192|124|0|S|3|1|9|0|1|1|i|
+"Objetos"22|11|10|176|140|0|S|0|3|7|0|1|1|c|
+"Objetos"22|12|1|328|124|0|S|4|1|5|0|1|1|i|
+"Objetos"22|13|11|288|140|0|S|0|3|8|0|1|1|c|
+"Objetos"22|14|14|40|160|0|S|0|1|9|0|1|1|i|
+"Objetos"22|15|0|234|184|0|S|5|2|13|0|1|1|i|
+"Objetos"22|16|12|152|208|0|S|0|5|10|0|1|1|d|
+"Objetos"22|17|1|24|176|0|C|0|0|2|110|1|1|0|
+"Objetos"22|18|26|12|316|0|S|0|2|31|0|1|1|c|
+"Objetos"22|19|27|20|340|0|S|0|1|46|0|1|1|c|
+"Objetos"22|20|4|8|394|0|S|0|3|26|0|1|1|c|
+"Objetos"22|21|0|32|420|0|L|0|0|384|2|1|1|0|
+"Objetos"22|22|0|32|459|0|L|0|0|384|2|1|1|0|
+"Objetos"22|23|0|32|420|0|L|0|0|2|41|1|1|0|
+"Objetos"22|24|0|415|420|0|L|0|0|2|41|1|1|0|
+"Objetos"22|25|30|56|425|0|S|0|2|26|0|1|1|i|
+"Objetos"22|26|31|96|445|0|S|0|1|32|0|1|1|i|
+"Objetos"22|27|26|12|688|0|S|0|1|31|0|1|1|i|
+"Objetos"22|28|27|20|706|0|S|0|1|20|0|1|1|i|
+"Objetos"22|29|34|367|466|0|S|0|1|6|0|1|1|i|
+"Objetos"22|100|0|32|478|0|L|0|0|384|2|1|1|0|
+"Objetos"22|101|0|32|461|0|L|0|0|2|18|1|1|0|
+"Objetos"22|102|0|415|461|0|L|0|0|2|18|1|1|0|
+"Objetos"22|103|0|199|461|0|L|0|0|1|18|1|1|0|
+"Objetos"22|104|0|365|461|0|L|0|0|1|18|1|1|0|
+"Objetos"22|105|38|24|464|0|S|500|1|50|0|1|1|i|
+"Objetos"22|106|39|24|480|0|S|500|1|50|0|1|1|i|
+"Objetos"22|107|40|24|496|0|S|500|1|50|0|1|1|i|
+"Objetos"22|108|41|24|511|0|S|500|1|50|0|1|1|i|
+"Objetos"22|200|0|34|478|0|L|0|0|381|1|1|1|1|
+"Objetos"22|201|35|37|482|0|S|0|1|20|0|1|1|i|
+"Objetos"22|202|36|235|482|0|S|0|1|16|0|1|1|d|
+"Objetos"22|203|37|377|482|0|S|0|1|4|0|1|1|c|
+"Objetos"25|1|4|20|10|0|S|0|4|20|0|1|1|i|
+"Objetos"25|2|5|8|48|0|S|0|3|26|0|1|1|d|
+"Objetos"25|3|2|40|88|0|S|1|1|4|0|1|1|i|
+"Objetos"25|4|6|80|88|0|S|0|2|8|0|1|1|i|
+"Objetos"25|5|3|208|88|0|S|2|1|4|0|1|1|i|
+"Objetos"25|6|9|248|88|0|S|0|2|8|0|1|1|i|
+"Objetos"25|7|1|192|120|0|S|3|1|9|0|1|1|i|
+"Objetos"25|8|10|176|138|0|S|0|3|6|0|1|1|i|
+"Objetos"25|9|1|328|120|0|S|4|1|5|0|1|1|i|
+"Objetos"25|10|11|288|138|0|S|0|3|8|0|1|1|i|
+"Objetos"25|11|14|40|160|0|S|0|1|9|0|1|1|i|
+"Objetos"25|12|0|234|184|0|S|5|2|13|0|1|1|i|
+"Objetos"25|13|12|152|208|0|S|0|5|10|0|1|1|d|
+"Objetos"25|14|4|24|176|0|C|0|0|2|110|2|1|i|
+"Objetos"25|15|26|12|316|0|S|0|2|31|0|1|1|i|
+"Objetos"25|16|27|20|340|0|S|0|1|46|0|1|1|i|
+"Objetos"99|1|26|12|316|0|S|0|2|31|0|1|1|c|
+"Objetos"99|2|27|20|340|0|S|0|1|46|0|1|1|c|
+"TotalesPLU"1|20|2018-03-27|0|1|35.52|0.240|0.00|0.000|
+"TotalesPLU"1|21|2018-03-27|0|1|51.06|0.345|0.00|0.000|
+"TotalesPLU"1|30|2018-03-27|0|1|73.13|0.585|0.00|0.000|
+"TotalesPLU"1|33|2018-03-27|0|1|41.40|0.345|0.00|0.000|
+"TotalesPLU"1|34|2018-03-27|0|2|101.44|0.690|0.00|0.000|
+"TotalesPLU"1|35|2018-03-27|0|1|98.87|0.585|0.00|0.000|
+"TotalesVendedor"1|0|0|2018-03-27|0|1|50.72|345.000|0.00|0.000|
+"TotalesVendedor"1|1|0|2018-03-27|0|6|350.70|2445.000|0.00|0.000|
+"Operadores"1||Administrator|4|TRUE|FALSE|NNNNNNNNNNNSSSSSSSSSSSSSSSSSSSSS|
+"Entidades"3|4000|Departamentos|20|2|
+"Entidades"3|4000LCD|Departamentos|20|2|
+"Entidades"3|4000LED|Departamentos|20|2|
+"Entidades"3|7000|Departamentos|1|2|
+"Entidades"4|4000|Familia|400|3|
+"Entidades"4|4000LCD|Familia|400|3|
+"Entidades"4|4000LED|Familia|400|3|
+"Entidades"4|7000|Familia|0|3|
+"Entidades"5|4000|PLU´s|12000|2|
+"Entidades"5|4000LCD|PLU´s|12000|2|
+"Entidades"5|4000LED|PLU´s|12000|2|
+"Entidades"5|7000|PLU´s|30000|2|
+"Entidades"6|4000|Textos libres|500|3|
+"Entidades"6|4000LCD|Textos libres|500|3|
+"Entidades"6|4000LED|Textos libres|500|3|
+"Entidades"6|7000|Textos libres|500|3|
+"Entidades"14|4000|Código de barras|158|4|
+"Entidades"14|4000LCD|Código de barras|158|4|
+"Entidades"14|4000LED|Código de barras|158|4|
+"Entidades"14|7000|Código de barras|0|4|
+"Entidades"20|4000|Filas nutricionales|200|5|
+"Entidades"20|4000LCD|Filas nutricionales|200|5|
+"Entidades"20|4000LED|Filas nutricionales|200|5|
+"Entidades"20|7000|Filas nutricionales|0|5|
+"Entidades"21|4000|Tablas nutricionales|20|10|
+"Entidades"21|4000LCD|Tablas nutricionales|20|10|
+"Entidades"21|4000LED|Tablas nutricionales|20|10|
+"Entidades"21|7000|Tablas nutricionales|0|10|
+"Entidades"56|4000|Rangos de precios|200|3|
+"Entidades"56|4000LCD|Rangos de precios|200|3|
+"Entidades"56|4000LED|Rangos de precios|200|3|
+"Entidades"56|7000|Rangos de precios|0|3|
+"ModDatos"3|4000|2|16|
+"ModDatos"3|4000LCD|2|16|
+"ModDatos"3|4000LED|2|16|
+"ModDatos"3|7000|2|0|
+"ModDatos"4|4000|3|16|
+"ModDatos"4|4000LCD|3|16|
+"ModDatos"4|4000LED|3|16|
+"ModDatos"4|7000|3|0|
+"ModDatos"5|4000|4|26|
+"ModDatos"5|4000LCD|4|26|
+"ModDatos"5|4000LED|4|26|
+"ModDatos"5|7000|4|32|
+"ModDatos"5|4000|5|26|
+"ModDatos"5|4000LCD|5|26|
+"ModDatos"5|4000LED|5|26|
+"ModDatos"5|7000|5|42|
+"ModDatos"5|4000|6|5|
+"ModDatos"5|4000LCD|6|5|
+"ModDatos"5|4000LED|6|5|
+"ModDatos"5|7000|6|14|
+"ModDatos"5|4000|8|7|
+"ModDatos"5|4000LCD|8|7|
+"ModDatos"5|4000LED|8|7|
+"ModDatos"5|7000|8|0|
+"ModDatos"5|4000|9|7|
+"ModDatos"5|4000LCD|9|6|
+"ModDatos"5|4000LED|9|5|
+"ModDatos"5|7000|9|7|
+"ModDatos"5|4000|10|7|
+"ModDatos"5|4000LCD|10|6|
+"ModDatos"5|4000LED|10|5|
+"ModDatos"5|7000|10|7|
+"ModDatos"5|4000|11|7|
+"ModDatos"5|4000LCD|11|6|
+"ModDatos"5|4000LED|11|5|
+"ModDatos"5|7000|11|7|
+"ModDatos"5|4000|12|6|
+"ModDatos"5|4000LCD|12|6|
+"ModDatos"5|4000LED|12|6|
+"ModDatos"5|7000|12|6|
+"ModDatos"5|4000|13|6|
+"ModDatos"5|4000LCD|13|6|
+"ModDatos"5|4000LED|13|6|
+"ModDatos"5|7000|13|6|
+"ModDatos"5|4000|14|5|
+"ModDatos"5|4000LCD|14|5|
+"ModDatos"5|4000LED|14|5|
+"ModDatos"5|7000|14|0|
+"ModDatos"5|4000|15|5|
+"ModDatos"5|4000LCD|15|5|
+"ModDatos"5|4000LED|15|5|
+"ModDatos"5|7000|15|0|
+"ModDatos"5|4000|17|4|
+"ModDatos"5|4000LCD|17|4|
+"ModDatos"5|4000LED|17|4|
+"ModDatos"5|7000|17|0|
+"ModDatos"5|4000|22|4|
+"ModDatos"5|4000LCD|22|4|
+"ModDatos"5|4000LED|22|4|
+"ModDatos"5|7000|22|0|
+"ModDatos"6|4000|3|50|
+"ModDatos"6|4000LCD|3|50|
+"ModDatos"6|4000LED|3|50|
+"ModDatos"6|7000|3|50|
+"MediosPagos"1|Cash|E|1|1.00000|2|0.00|TRUE|TRUE|TRUE|TRUE|FALSE|
+"MediosPagos"2|Credit|T|1|1.00000|2|0.00|FALSE|FALSE|TRUE|TRUE|FALSE|
+"MediosPagos"3|Check|C|1|1.00000|2|0.00|FALSE|FALSE|TRUE|TRUE|FALSE|
+"IVAs"1|0.000|
+"IVAs"2|21.000|
+"ImpuestosInternos"1|%|0.000|
+"ImpuestosInternos"2|%|10.000|
+"ImpuestosInternos"3|$|0.500|
+"ExportacionASCII"0|K_|||txt|d:/Balanza/|;|0|
+"ConfBarraFiscal"1|020CCCCCIIIIIX|M|0|CCCCCCCCCCCCCC|
+"Grupos"1|Group 1|
+"TotalesPLUParcial"1|20|2018-03-27|0|1|35.52|0.24|0.00|0.00|
+"TotalesPLUParcial"1|21|2018-03-27|0|1|51.06|0.34|0.00|0.00|
+"TotalesPLUParcial"1|30|2018-03-27|0|1|73.13|0.58|0.00|0.00|
+"TotalesPLUParcial"1|33|2018-03-27|0|1|41.40|0.34|0.00|0.00|
+"TotalesPLUParcial"1|34|2018-03-27|0|2|101.44|0.69|0.00|0.00|
+"TotalesPLUParcial"1|35|2018-03-27|0|1|98.87|0.58|0.00|0.00|
+"Almacenes"1|Center|C|
+"Stock_Comprobantes"1|Sale|S|-|
+"Stock_Comprobantes"2|Input|I|+|
+"Stock_Comprobantes"3|Input|I|+|
+"Stock_Comprobantes"4|Output|O|-|
+"Stock_Motivos"1|Equipment|
+"Stock_Cabecera"1|1|2018-03-27|1|1|1||0|1|
+"Stock_Detalle"1|20|0.24||
+"Stock_Detalle"1|21|0.34||
+"Stock_Detalle"1|30|0.58||
+"Stock_Detalle"1|33|0.34||
+"Stock_Detalle"1|34|0.69||
+"Stock_Detalle"1|35|0.58||
+"Stock_PLU_Almacenes"20|1|-0.24||
+"Stock_PLU_Almacenes"21|1|-0.34||
+"Stock_PLU_Almacenes"30|1|-0.58||
+"Stock_PLU_Almacenes"33|1|-0.34||
+"Stock_PLU_Almacenes"34|1|-0.69||
+"Stock_PLU_Almacenes"35|1|-0.58||
