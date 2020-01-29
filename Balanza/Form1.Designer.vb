@@ -39,6 +39,8 @@ Partial Class Form1
         Me.cmdCargarPrecios = New System.Windows.Forms.Button()
         Me.cmdGuardar = New System.Windows.Forms.Button()
         Me.cmdMail = New System.Windows.Forms.Button()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.ListBox2 = New System.Windows.Forms.ListBox()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -69,7 +71,7 @@ Partial Class Form1
         Me.lstSucs.ItemHeight = 16
         Me.lstSucs.Location = New System.Drawing.Point(12, 35)
         Me.lstSucs.Name = "lstSucs"
-        Me.lstSucs.Size = New System.Drawing.Size(218, 720)
+        Me.lstSucs.Size = New System.Drawing.Size(218, 112)
         Me.lstSucs.TabIndex = 1
         '
         'cmdSalir
@@ -108,7 +110,7 @@ Partial Class Form1
         '
         Me.cmdOfertas.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdOfertas.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdOfertas.Location = New System.Drawing.Point(1267, 782)
+        Me.cmdOfertas.Location = New System.Drawing.Point(1055, 782)
         Me.cmdOfertas.Name = "cmdOfertas"
         Me.cmdOfertas.Size = New System.Drawing.Size(78, 23)
         Me.cmdOfertas.TabIndex = 11
@@ -145,7 +147,7 @@ Partial Class Form1
         Me.grdPrecios.Redraw = True
         Me.grdPrecios.Row = 0
         Me.grdPrecios.Rows = 50
-        Me.grdPrecios.Size = New System.Drawing.Size(652, 760)
+        Me.grdPrecios.Size = New System.Drawing.Size(536, 760)
         Me.grdPrecios.TabIndex = 12
         '
         'Button1
@@ -153,7 +155,7 @@ Partial Class Form1
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Location = New System.Drawing.Point(1147, 782)
+        Me.Button1.Location = New System.Drawing.Point(935, 782)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(61, 23)
         Me.Button1.TabIndex = 11
@@ -166,7 +168,7 @@ Partial Class Form1
         Me.txtBuscador.Dock = System.Windows.Forms.DockStyle.Top
         Me.txtBuscador.Location = New System.Drawing.Point(0, 0)
         Me.txtBuscador.Name = "txtBuscador"
-        Me.txtBuscador.Size = New System.Drawing.Size(536, 13)
+        Me.txtBuscador.Size = New System.Drawing.Size(440, 13)
         Me.txtBuscador.TabIndex = 13
         '
         'lblBuscador
@@ -175,7 +177,7 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblBuscador.Location = New System.Drawing.Point(826, 787)
         Me.lblBuscador.Name = "lblBuscador"
-        Me.lblBuscador.Size = New System.Drawing.Size(382, 18)
+        Me.lblBuscador.Size = New System.Drawing.Size(170, 18)
         Me.lblBuscador.TabIndex = 14
         '
         'grdVerPrecios
@@ -210,14 +212,14 @@ Partial Class Form1
         Me.grdVerPrecios.Redraw = True
         Me.grdVerPrecios.Row = 0
         Me.grdVerPrecios.Rows = 50
-        Me.grdVerPrecios.Size = New System.Drawing.Size(530, 741)
+        Me.grdVerPrecios.Size = New System.Drawing.Size(434, 741)
         Me.grdVerPrecios.TabIndex = 15
         '
         'cmdEjecutar
         '
         Me.cmdEjecutar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdEjecutar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdEjecutar.Location = New System.Drawing.Point(1365, 782)
+        Me.cmdEjecutar.Location = New System.Drawing.Point(1153, 782)
         Me.cmdEjecutar.Name = "cmdEjecutar"
         Me.cmdEjecutar.Size = New System.Drawing.Size(67, 23)
         Me.cmdEjecutar.TabIndex = 11
@@ -240,8 +242,8 @@ Partial Class Form1
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.grdPrecios)
-        Me.SplitContainer1.Size = New System.Drawing.Size(1196, 760)
-        Me.SplitContainer1.SplitterDistance = 536
+        Me.SplitContainer1.Size = New System.Drawing.Size(984, 760)
+        Me.SplitContainer1.SplitterDistance = 440
         Me.SplitContainer1.SplitterWidth = 8
         Me.SplitContainer1.TabIndex = 16
         '
@@ -249,7 +251,7 @@ Partial Class Form1
         '
         Me.cmdCargarPrecios.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdCargarPrecios.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdCargarPrecios.Location = New System.Drawing.Point(780, 782)
+        Me.cmdCargarPrecios.Location = New System.Drawing.Point(568, 782)
         Me.cmdCargarPrecios.Name = "cmdCargarPrecios"
         Me.cmdCargarPrecios.Size = New System.Drawing.Size(78, 23)
         Me.cmdCargarPrecios.TabIndex = 11
@@ -260,7 +262,7 @@ Partial Class Form1
         '
         Me.cmdGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdGuardar.Location = New System.Drawing.Point(864, 782)
+        Me.cmdGuardar.Location = New System.Drawing.Point(652, 782)
         Me.cmdGuardar.Name = "cmdGuardar"
         Me.cmdGuardar.Size = New System.Drawing.Size(78, 23)
         Me.cmdGuardar.TabIndex = 11
@@ -278,11 +280,39 @@ Partial Class Form1
         Me.cmdMail.Text = "Leer Mail"
         Me.cmdMail.UseVisualStyleBackColor = True
         '
+        'ListBox1
+        '
+        Me.ListBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.ListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ListBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ListBox1.ForeColor = System.Drawing.Color.DimGray
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.ItemHeight = 16
+        Me.ListBox1.Location = New System.Drawing.Point(12, 188)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(218, 112)
+        Me.ListBox1.TabIndex = 1
+        '
+        'ListBox2
+        '
+        Me.ListBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.ListBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ListBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ListBox2.ForeColor = System.Drawing.Color.DimGray
+        Me.ListBox2.FormattingEnabled = True
+        Me.ListBox2.ItemHeight = 16
+        Me.ListBox2.Location = New System.Drawing.Point(12, 306)
+        Me.ListBox2.Name = "ListBox2"
+        Me.ListBox2.Size = New System.Drawing.Size(218, 112)
+        Me.ListBox2.TabIndex = 1
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1444, 813)
+        Me.ClientSize = New System.Drawing.Size(1232, 813)
         Me.Controls.Add(Me.cmdGuardar)
         Me.Controls.Add(Me.cmdCargarPrecios)
         Me.Controls.Add(Me.Button1)
@@ -294,6 +324,8 @@ Partial Class Form1
         Me.Controls.Add(Me.cmdCrear)
         Me.Controls.Add(Me.cmdMail)
         Me.Controls.Add(Me.cmdSalir)
+        Me.Controls.Add(Me.ListBox2)
+        Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.lstSucs)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Form1"
@@ -335,4 +367,6 @@ Partial Class Form1
     Friend WithEvents cmdCargarPrecios As Button
     Friend WithEvents cmdGuardar As Button
     Friend WithEvents cmdMail As Button
+    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents ListBox2 As ListBox
 End Class
