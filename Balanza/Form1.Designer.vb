@@ -22,6 +22,7 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lstSucs = New System.Windows.Forms.ListBox()
@@ -32,7 +33,6 @@ Partial Class Form1
         Me.grdPrecios = New Grilla2.SpeedGrilla()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txtBuscador = New System.Windows.Forms.TextBox()
-        Me.lblBuscador = New System.Windows.Forms.Label()
         Me.grdVerPrecios = New Grilla2.SpeedGrilla()
         Me.cmdEjecutar = New System.Windows.Forms.Button()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
@@ -40,7 +40,10 @@ Partial Class Form1
         Me.cmdGuardar = New System.Windows.Forms.Button()
         Me.cmdMail = New System.Windows.Forms.Button()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.ListBox2 = New System.Windows.Forms.ListBox()
+        Me.lstRelleno = New System.Windows.Forms.ListBox()
+        Me.tiMail = New System.Windows.Forms.Timer(Me.components)
+        Me.chADB = New System.Windows.Forms.CheckBox()
+        Me.chReloj = New System.Windows.Forms.CheckBox()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -71,14 +74,14 @@ Partial Class Form1
         Me.lstSucs.ItemHeight = 16
         Me.lstSucs.Location = New System.Drawing.Point(12, 35)
         Me.lstSucs.Name = "lstSucs"
-        Me.lstSucs.Size = New System.Drawing.Size(218, 112)
+        Me.lstSucs.Size = New System.Drawing.Size(218, 336)
         Me.lstSucs.TabIndex = 1
         '
         'cmdSalir
         '
         Me.cmdSalir.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.cmdSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdSalir.Location = New System.Drawing.Point(192, 782)
+        Me.cmdSalir.Location = New System.Drawing.Point(253, 646)
         Me.cmdSalir.Name = "cmdSalir"
         Me.cmdSalir.Size = New System.Drawing.Size(75, 23)
         Me.cmdSalir.TabIndex = 4
@@ -90,7 +93,7 @@ Partial Class Form1
         Me.cmdCrear.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.cmdCrear.BackColor = System.Drawing.Color.WhiteSmoke
         Me.cmdCrear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdCrear.Location = New System.Drawing.Point(111, 781)
+        Me.cmdCrear.Location = New System.Drawing.Point(172, 645)
         Me.cmdCrear.Name = "cmdCrear"
         Me.cmdCrear.Size = New System.Drawing.Size(75, 23)
         Me.cmdCrear.TabIndex = 3
@@ -100,17 +103,18 @@ Partial Class Form1
         'dtFecha
         '
         Me.dtFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtFecha.Location = New System.Drawing.Point(12, 781)
+        Me.dtFecha.CustomFormat = "dd/MM/yyy H:mm"
+        Me.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtFecha.Location = New System.Drawing.Point(12, 648)
         Me.dtFecha.Name = "dtFecha"
-        Me.dtFecha.Size = New System.Drawing.Size(93, 20)
+        Me.dtFecha.Size = New System.Drawing.Size(133, 20)
         Me.dtFecha.TabIndex = 2
         '
         'cmdOfertas
         '
         Me.cmdOfertas.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdOfertas.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdOfertas.Location = New System.Drawing.Point(1055, 782)
+        Me.cmdOfertas.Location = New System.Drawing.Point(1055, 645)
         Me.cmdOfertas.Name = "cmdOfertas"
         Me.cmdOfertas.Size = New System.Drawing.Size(78, 23)
         Me.cmdOfertas.TabIndex = 11
@@ -147,7 +151,7 @@ Partial Class Form1
         Me.grdPrecios.Redraw = True
         Me.grdPrecios.Row = 0
         Me.grdPrecios.Rows = 50
-        Me.grdPrecios.Size = New System.Drawing.Size(536, 760)
+        Me.grdPrecios.Size = New System.Drawing.Size(536, 622)
         Me.grdPrecios.TabIndex = 12
         '
         'Button1
@@ -155,7 +159,7 @@ Partial Class Form1
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Location = New System.Drawing.Point(935, 782)
+        Me.Button1.Location = New System.Drawing.Point(736, 645)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(61, 23)
         Me.Button1.TabIndex = 11
@@ -170,15 +174,6 @@ Partial Class Form1
         Me.txtBuscador.Name = "txtBuscador"
         Me.txtBuscador.Size = New System.Drawing.Size(440, 13)
         Me.txtBuscador.TabIndex = 13
-        '
-        'lblBuscador
-        '
-        Me.lblBuscador.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblBuscador.Location = New System.Drawing.Point(826, 787)
-        Me.lblBuscador.Name = "lblBuscador"
-        Me.lblBuscador.Size = New System.Drawing.Size(170, 18)
-        Me.lblBuscador.TabIndex = 14
         '
         'grdVerPrecios
         '
@@ -212,14 +207,14 @@ Partial Class Form1
         Me.grdVerPrecios.Redraw = True
         Me.grdVerPrecios.Row = 0
         Me.grdVerPrecios.Rows = 50
-        Me.grdVerPrecios.Size = New System.Drawing.Size(434, 741)
+        Me.grdVerPrecios.Size = New System.Drawing.Size(434, 689)
         Me.grdVerPrecios.TabIndex = 15
         '
         'cmdEjecutar
         '
         Me.cmdEjecutar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdEjecutar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdEjecutar.Location = New System.Drawing.Point(1153, 782)
+        Me.cmdEjecutar.Location = New System.Drawing.Point(1153, 645)
         Me.cmdEjecutar.Name = "cmdEjecutar"
         Me.cmdEjecutar.Size = New System.Drawing.Size(67, 23)
         Me.cmdEjecutar.TabIndex = 11
@@ -242,7 +237,7 @@ Partial Class Form1
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.grdPrecios)
-        Me.SplitContainer1.Size = New System.Drawing.Size(984, 760)
+        Me.SplitContainer1.Size = New System.Drawing.Size(984, 622)
         Me.SplitContainer1.SplitterDistance = 440
         Me.SplitContainer1.SplitterWidth = 8
         Me.SplitContainer1.TabIndex = 16
@@ -251,7 +246,7 @@ Partial Class Form1
         '
         Me.cmdCargarPrecios.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdCargarPrecios.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdCargarPrecios.Location = New System.Drawing.Point(568, 782)
+        Me.cmdCargarPrecios.Location = New System.Drawing.Point(568, 645)
         Me.cmdCargarPrecios.Name = "cmdCargarPrecios"
         Me.cmdCargarPrecios.Size = New System.Drawing.Size(78, 23)
         Me.cmdCargarPrecios.TabIndex = 11
@@ -262,7 +257,7 @@ Partial Class Form1
         '
         Me.cmdGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdGuardar.Location = New System.Drawing.Point(652, 782)
+        Me.cmdGuardar.Location = New System.Drawing.Point(652, 645)
         Me.cmdGuardar.Name = "cmdGuardar"
         Me.cmdGuardar.Size = New System.Drawing.Size(78, 23)
         Me.cmdGuardar.TabIndex = 11
@@ -273,7 +268,7 @@ Partial Class Form1
         '
         Me.cmdMail.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.cmdMail.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdMail.Location = New System.Drawing.Point(273, 782)
+        Me.cmdMail.Location = New System.Drawing.Point(334, 646)
         Me.cmdMail.Name = "cmdMail"
         Me.cmdMail.Size = New System.Drawing.Size(75, 23)
         Me.cmdMail.TabIndex = 4
@@ -282,49 +277,80 @@ Partial Class Form1
         '
         'ListBox1
         '
-        Me.ListBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.ListBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.ListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ListBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListBox1.ForeColor = System.Drawing.Color.DimGray
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.ItemHeight = 16
-        Me.ListBox1.Location = New System.Drawing.Point(12, 188)
+        Me.ListBox1.Location = New System.Drawing.Point(12, 401)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(218, 112)
         Me.ListBox1.TabIndex = 1
         '
-        'ListBox2
+        'lstRelleno
         '
-        Me.ListBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.ListBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ListBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListBox2.ForeColor = System.Drawing.Color.DimGray
-        Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.ItemHeight = 16
-        Me.ListBox2.Location = New System.Drawing.Point(12, 306)
-        Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(218, 112)
-        Me.ListBox2.TabIndex = 1
+        Me.lstRelleno.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lstRelleno.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lstRelleno.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lstRelleno.ForeColor = System.Drawing.Color.DimGray
+        Me.lstRelleno.FormattingEnabled = True
+        Me.lstRelleno.ItemHeight = 20
+        Me.lstRelleno.Items.AddRange(New Object() {"OFERTA", "x 2kg", "x 3kg", "x 5kg", "x 10kg", "x 2", "x 3"})
+        Me.lstRelleno.Location = New System.Drawing.Point(12, 391)
+        Me.lstRelleno.Name = "lstRelleno"
+        Me.lstRelleno.Size = New System.Drawing.Size(218, 240)
+        Me.lstRelleno.TabIndex = 1
+        '
+        'tiMail
+        '
+        Me.tiMail.Enabled = True
+        Me.tiMail.Interval = 50000
+        '
+        'chADB
+        '
+        Me.chADB.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.chADB.AutoSize = True
+        Me.chADB.Checked = True
+        Me.chADB.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chADB.Location = New System.Drawing.Point(998, 650)
+        Me.chADB.Name = "chADB"
+        Me.chADB.Size = New System.Drawing.Size(51, 17)
+        Me.chADB.TabIndex = 17
+        Me.chADB.Text = "A DB"
+        Me.chADB.UseVisualStyleBackColor = True
+        '
+        'chReloj
+        '
+        Me.chReloj.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.chReloj.AutoSize = True
+        Me.chReloj.Checked = True
+        Me.chReloj.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chReloj.Location = New System.Drawing.Point(416, 652)
+        Me.chReloj.Name = "chReloj"
+        Me.chReloj.Size = New System.Drawing.Size(50, 17)
+        Me.chReloj.TabIndex = 17
+        Me.chReloj.Text = "Reloj"
+        Me.chReloj.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1232, 813)
+        Me.ClientSize = New System.Drawing.Size(1232, 676)
+        Me.Controls.Add(Me.chReloj)
+        Me.Controls.Add(Me.chADB)
         Me.Controls.Add(Me.cmdGuardar)
         Me.Controls.Add(Me.cmdCargarPrecios)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.SplitContainer1)
-        Me.Controls.Add(Me.lblBuscador)
         Me.Controls.Add(Me.cmdEjecutar)
         Me.Controls.Add(Me.cmdOfertas)
         Me.Controls.Add(Me.dtFecha)
         Me.Controls.Add(Me.cmdCrear)
         Me.Controls.Add(Me.cmdMail)
         Me.Controls.Add(Me.cmdSalir)
-        Me.Controls.Add(Me.ListBox2)
+        Me.Controls.Add(Me.lstRelleno)
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.lstSucs)
         Me.Controls.Add(Me.Label1)
@@ -338,6 +364,7 @@ Partial Class Form1
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -360,7 +387,6 @@ Partial Class Form1
     Friend WithEvents grdPrecios As Grilla2.SpeedGrilla
     Friend WithEvents Button1 As Button
     Friend WithEvents txtBuscador As TextBox
-    Friend WithEvents lblBuscador As Label
     Friend WithEvents grdVerPrecios As Grilla2.SpeedGrilla
     Friend WithEvents cmdEjecutar As Button
     Friend WithEvents SplitContainer1 As SplitContainer
@@ -368,5 +394,8 @@ Partial Class Form1
     Friend WithEvents cmdGuardar As Button
     Friend WithEvents cmdMail As Button
     Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents ListBox2 As ListBox
+    Friend WithEvents lstRelleno As ListBox
+    Friend WithEvents tiMail As Timer
+    Friend WithEvents chADB As CheckBox
+    Friend WithEvents chReloj As CheckBox
 End Class

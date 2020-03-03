@@ -29,7 +29,7 @@ Public Class Form1
             .ColW(6) = 60
             .ColW(7) = 60
 
-            Dim n() As Integer = {13, 32, 42, 43, 45, 47, 112, 123}
+            Dim n() As Integer = {13, 32, 42, 43, 45, 47, 107, 112, 123}
             .TeclasManejadas = n
         End With
         Dim dt As DataTable = dbM.Datos("SELECT * FROM vw_AliasBalanza WHERE CodDeProd=-1")
@@ -146,6 +146,8 @@ Public Class Form1
                 End If
                 Dim dt As DataTable = dbM.Datos(s)
                 grdVerPrecios.MostrarDatos(dt, True)
+                grdVerPrecios.AutosizeAll()
+
             End If
 
         End With
@@ -156,7 +158,7 @@ Public Class Form1
             Me.Cursor = Cursors.WaitCursor
             Me.Enabled = False
             Dim f As Date = dtFecha.Value.Date
-
+            Dim fEsperar As DateTime = Date.Now.AddMinutes(2)
 
             Dim s_info As String = v_Path & "INFO.JDG"
             'Dim s_info As String = "\\192.168.5.1\Balanza\JDataGate\kSolutions\DataGate\INFO.JDG"
@@ -190,18 +192,20 @@ Public Class Form1
                             prod = prod.Replace("ñ", "n")
                             prod = prod.Replace("ó", "o")
                             prod = prod.Replace("Ó", "O")
+                            prod = CambiarAcentos(prod)
                             prod = prod.Substring(0, 26)
-                            Dim ps, pr As String
-                            If .Texto(i, .ColIndex("Pesable")) = True Then
-                                ps = "P"
-                            Else
-                                ps = "N"
-                            End If
-                            pr = Format(.Texto(i, .ColIndex("Final")), "0000000.00")
 
-                            pr = pr.Remove(pr.IndexOf(","), 1)
+                            If chADB.Checked = False Then
+                                Dim ps, pr As String
+                                If .Texto(i, .ColIndex("Pesable")) = True Then
+                                    ps = "P"
+                                Else
+                                    ps = "N"
+                                End If
+                                pr = Format(.Texto(i, .ColIndex("Final")), "0000000.00")
 
-                            cm = String.Format("C{0}2005{1}001{2}{3}{3}{4}{5}0000{6}0000000000000000000000000000000000010000000000000000",
+                                pr = pr.Remove(pr.IndexOf(","), 1)
+                                cm = String.Format("C{0}2005{1}001{2}{3}{3}{4}{5}0000{6}0000000000000000000000000000000000010000000000000000",
                                                    Format(s_Equipo, "00"),
                                                    Format(.Texto(i, .ColIndex("Prod")), "000000"),
                                                    Format(.Texto(i, .ColIndex("Grupo")), "000"),
@@ -209,28 +213,34 @@ Public Class Form1
                                                    Format(.Texto(i, .ColIndex("Prod")), "00000"),
                                                    ps, pr
                                                    )
-
-                            es.WriteLine(cm)
-
-                            cm = "DELETE FROM Ofertas_Balanza WHERE Fecha={0} AND CodSuc={1} AND CodProd={2}"
-                            cm = String.Format(cm, CDate(.Texto(i, .ColIndex("Fecha"))).Fecha_SQL, s, .Texto(i, .ColIndex("Prod")))
-                            dbM.EjecutarCadena(cm)
-
-                            cm = "INSERT INTO Ofertas_Balanza ([Fecha],[CodProd],Descripcion, Grupo, Pesable, [Precio],Multi, Final) VALUES({0},{1},'{2}',{3},{4},{5},{6},{7})"
-                            cm = String.Format(cm, CDate(.Texto(i, .ColIndex("Fecha"))).Fecha_SQL, .Texto(i, .ColIndex("Prod")),
-                                               .Texto(i, .ColIndex("Descripcion")) _
-                                               , .Texto(i, .ColIndex("Grupo")), FormatearValorAlCornudoDeSql(.Texto(i, .ColIndex("Pesable"))), FormatearValorAlCornudoDeSql(.Texto(i, .ColIndex("Precio"))) _
-                                               , .Texto(i, .ColIndex("Multi")), FormatearValorAlCornudoDeSql(.Texto(i, .ColIndex("Final"))))
-                            dbM.EjecutarCadena(cm)
+                                es.WriteLine(cm)
+                            Else
+                                cm = String.Format("INSERT INTO [dbM].[dbo].[Ofertas_Balanza] ([Fecha], [CodProd], [Descripcion], [Grupo], [Pesable], [Precio], [Multi], [Final], [Guardado], [Suc]) " &
+                                                    "VALUES('{0}', {1}, '{2}', {3}, {4}, {5}, {6}, {7}, 0, {8})",
+                                                   String.Format("MM/dd/yyy H:mm", dtFecha.Value),
+                                                   .Texto(i, .ColIndex("Prod")),
+                                                   prod,
+                                                   .Texto(i, .ColIndex("Grupo")),
+                                                   FormatearValorAlCornudoDeSql(.Texto(i, .ColIndex("Pesable"))),
+                                                   FormatearValorAlCornudoDeSql(.Texto(i, .ColIndex("Precio"))),
+                                                   .Texto(i, .ColIndex("Multi")),
+                                                   FormatearValorAlCornudoDeSql(.Texto(i, .ColIndex("Final"))),
+                                                   s)
+                                dbM.EjecutarCadena(cm)
+                            End If
                         Next
                     End If
                 End With
 
+                If chADB.Checked = False Then
+                    es.WriteLine(String.Format("C{0}0001", Format(s_Equipo, "00")))
 
-                es.WriteLine(String.Format("C{0}0001", Format(s_Equipo, "00")))
+                    Process.Start(v_Path & "JDataGate.exe")
+                    While DateTime.Now < fEsperar
 
-                Process.Start(v_Path & "JDataGate.exe")
-
+                    End While
+                    fEsperar = fEsperar.AddMinutes(2)
+                End If
             Next
             es.Close()
 
@@ -245,6 +255,70 @@ Public Class Form1
 
     End Sub
 
+    Private Sub tiMail_Tick(sender As Object, e As EventArgs) Handles tiMail.Tick
+        Dim dt As DataTable = dbM.Datos($"SELECT * FROM Ofertas_Balanza WHERE Guardado=0 AND Fecha < '{Date.Now.ToString("MM/dd/yyy H:mm")}' ORDER BY Fecha")
+
+        Dim s_info As String = v_Path & "INFO.JDG"
+
+        If Dir(s_info) <> "" Then My.Computer.FileSystem.DeleteFile(s_info)
+
+        Dim es As New StreamWriter(s_info)
+        Dim s_Equipo As Integer
+
+        For Each dr As DataRow In dt.Rows
+            Dim s As Integer = dr.Item("Suc")
+            s_Equipo = dbM.BuscarDato("SELECT ISNULL(Equipo, 0) Equipo FROM Sucursales WHERE Sucursal=" & s)
+            Dim s_IP As String = dbM.BuscarDato("SELECT ISNULL(IP, 0) Equipo FROM Sucursales WHERE Sucursal=" & s)
+
+            Dim s_COM As String = v_Path & "COM.JDG"
+
+            If Dir(s_COM) <> "" Then My.Computer.FileSystem.DeleteFile(s_COM)
+
+            Dim ecom As New StreamWriter(s_COM)
+
+            ecom.WriteLine(String.Format("""01"",""C""""1"", ""TCP"", ""{0}"", ""9101""", s_IP))
+            ecom.Close()
+
+            Dim cm As String
+            Dim prod As String
+
+            prod = dr.Item("Descripcion").PadRight(30, CChar(" "))
+            prod = prod.Replace("Ñ", "N")
+            prod = prod.Replace("ñ", "n")
+            prod = prod.Replace("ó", "o")
+            prod = prod.Replace("Ó", "O")
+            prod = prod.Substring(0, 26)
+            Dim ps, pr As String
+            If dr.Item("Pesable") = True Then
+                ps = "P"
+            Else
+                ps = "N"
+            End If
+            pr = Format(dr.Item("Final"), "0000000.00")
+
+            pr = pr.Remove(pr.IndexOf(","), 1)
+
+            cm = String.Format("C{0}2005{1}001{2}{3}{3}{4}{5}0000{6}0000000000000000000000000000000000010000000000000000",
+                                                   Format(s_Equipo, "00"),
+                                                   Format(dr.Item("CodProd"), "000000"),
+                                                   Format(dr.Item("Grupo"), "000"),
+                                                   prod,
+                                                   Format(dr.Item("CodProd"), "00000"),
+                                                   ps, pr
+                                                   )
+            'C01200500034800100434834800348N00000001620000000000000000000000000000000000000010000000000000000
+            'C012005000347001004Guerreiro                 00347N00000001600000000000000000000000000000000000000010000000000000000
+            'C012005000300001006Pollo x Kg                00300P00000000097000000000000000000000000000000000000010000000000000000
+            es.WriteLine(cm)
+        Next
+        If dt.Rows.Count Then
+            es.WriteLine(String.Format("C{0}0001", Format(s_Equipo, "00")))
+            Process.Start(v_Path & "JDataGate.exe")
+            dbM.EjecutarCadena($"UPDATE Ofertas_Balanza SET Guardado=1 WHERE Guardado=0 AND Fecha < '{Date.Now.ToString("MM/dd/yyy H:mm")}'")
+        End If
+        es.Close()
+
+    End Sub
     Private Sub grdPrecios_Editado(f As Short, c As Short, a As Object) Handles grdPrecios.Editado
         With grdPrecios
             Select Case c
@@ -268,12 +342,25 @@ Public Class Form1
                         End If
                         .Texto(f, .ColIndex("Precio")) = dt.Rows(0).Item("Precio")
                         .Texto(f, .ColIndex("Final")) = .Texto(f, .ColIndex("Precio")) / .Texto(f, .ColIndex("Multi"))
-                        .ActivarCelda(f, .ColIndex("Precio"))
+                        .ActivarCelda(f, c + 1)
                     Else
                         .ErrorEnTxt()
                     End If
                 Case .ColIndex("Grupo"), .ColIndex("Descripcion")
                     .Texto = a
+                Case .ColIndex("Multi")
+                    .Texto = a
+                    .Texto(f, .ColIndex("Final")) = .Texto(f, .ColIndex("Precio")) / a
+                    If .Row = .Rows - 1 Then
+                        .AgregarFila()
+                        .ActivarCelda(f + 1, 0)
+                    Else
+                        If .Texto(f + 1, 0) <> 0 Then
+                            .ActivarCelda(f + 1, c)
+                        Else
+                            .ActivarCelda(f + 1, 0)
+                        End If
+                    End If
                 Case .ColIndex("Precio")
                     .Texto = a
                     .Texto(f, .ColIndex("Final")) = .Texto(f, .ColIndex("Precio")) / .Texto(f, .ColIndex("Multi"))
@@ -281,7 +368,11 @@ Public Class Form1
                         .AgregarFila()
                         .ActivarCelda(f + 1, 0)
                     Else
-                        .ActivarCelda(f + 1, c)
+                        If .Texto(f + 1, 0) <> 0 Then
+                            .ActivarCelda(f + 1, c)
+                        Else
+                            .ActivarCelda(f + 1, 0)
+                        End If
                     End If
 
             End Select
@@ -290,6 +381,14 @@ Public Class Form1
 
     Private Shared Function CambiarAcentos(dt As DataTable) As String
         Dim s As String = dt.Rows(0).Item("Nombre")
+        Dim reg As Regex = New Regex("[^a-zA-Z0-9 ]")
+
+        s = s.Normalize(NormalizationForm.FormD)
+        s = reg.Replace(s, "")
+
+        Return s
+    End Function
+    Private Shared Function CambiarAcentos(s As String) As String
         Dim reg As Regex = New Regex("[^a-zA-Z0-9 ]")
 
         s = s.Normalize(NormalizationForm.FormD)
@@ -340,11 +439,33 @@ Public Class Form1
                         .Rows = 2
                     End If
                 Case Keys.Add
-                    Dim S As String = .Texto(.Row, .ColIndex("Descripcion")) & " OFERTA"
+                    Dim S As String = .Texto(.Row, .ColIndex("Descripcion"))
+                    If lstRelleno.SelectedIndex > -1 Then
+                        S &= " " & lstRelleno.Text
+                    End If
                     .Texto(.Row, .ColIndex("Descripcion")) = S
+                    .ActivarCelda(.Row, .ColIndex("Precio"))
+                Case Keys.Enter
+                    If .Col = .ColIndex("Final") Then
+                        If .Texto(.Row + 1, 0) <> 0 Then
+                            .ActivarCelda(.Row + 1, 0)
+                        Else
+                            If .Row = .Rows - 1 Then .AgregarFila()
+                            .ActivarCelda(.Row, .Col + 1)
+                        End If
+                    End If
+                Case 32 '2 en el teclado no numerico
+                    Dim multi As Integer = .Texto(.Row, .ColIndex("Multi"))
+                    If multi = 0 Then
+                        multi = 2
+                    Else
+                        multi += 1
+                    End If
+                    .Texto(.Row, .ColIndex("Multi")) = multi
+                    .Texto(.Row, .ColIndex("Final")) = .Texto(.Row, .ColIndex("Precio")) / multi
 
             End Select
-            MsgBox(e)
+
         End With
     End Sub
 
@@ -368,7 +489,11 @@ Public Class Form1
     End Sub
 
     Private Sub cmdMail_Click(sender As Object, e As EventArgs) Handles cmdMail.Click
+        tiMail_Tick(Nothing, Nothing)
+    End Sub
 
+    Private Sub chReloj_CheckedChanged(sender As Object, e As EventArgs) Handles chReloj.CheckedChanged
+        tiMail.Enabled = chReloj.Checked
     End Sub
 End Class
 
