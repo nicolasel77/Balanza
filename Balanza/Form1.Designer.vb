@@ -28,7 +28,6 @@ Partial Class Form1
         Me.lstSucs = New System.Windows.Forms.ListBox()
         Me.cmdSalir = New System.Windows.Forms.Button()
         Me.cmdCrear = New System.Windows.Forms.Button()
-        Me.dtFecha = New System.Windows.Forms.DateTimePicker()
         Me.cmdOfertas = New System.Windows.Forms.Button()
         Me.grdPrecios = New Grilla2.SpeedGrilla()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -39,11 +38,12 @@ Partial Class Form1
         Me.cmdCargarPrecios = New System.Windows.Forms.Button()
         Me.cmdGuardar = New System.Windows.Forms.Button()
         Me.cmdMail = New System.Windows.Forms.Button()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.lstRelleno = New System.Windows.Forms.ListBox()
         Me.tiMail = New System.Windows.Forms.Timer(Me.components)
         Me.chADB = New System.Windows.Forms.CheckBox()
         Me.chReloj = New System.Windows.Forms.CheckBox()
+        Me.mntFecha = New System.Windows.Forms.MonthCalendar()
+        Me.dtHora = New System.Windows.Forms.DateTimePicker()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -74,14 +74,14 @@ Partial Class Form1
         Me.lstSucs.ItemHeight = 16
         Me.lstSucs.Location = New System.Drawing.Point(12, 35)
         Me.lstSucs.Name = "lstSucs"
-        Me.lstSucs.Size = New System.Drawing.Size(218, 336)
+        Me.lstSucs.Size = New System.Drawing.Size(218, 160)
         Me.lstSucs.TabIndex = 1
         '
         'cmdSalir
         '
         Me.cmdSalir.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.cmdSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdSalir.Location = New System.Drawing.Point(253, 646)
+        Me.cmdSalir.Location = New System.Drawing.Point(340, 647)
         Me.cmdSalir.Name = "cmdSalir"
         Me.cmdSalir.Size = New System.Drawing.Size(75, 23)
         Me.cmdSalir.TabIndex = 4
@@ -93,22 +93,12 @@ Partial Class Form1
         Me.cmdCrear.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.cmdCrear.BackColor = System.Drawing.Color.WhiteSmoke
         Me.cmdCrear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdCrear.Location = New System.Drawing.Point(172, 645)
+        Me.cmdCrear.Location = New System.Drawing.Point(259, 646)
         Me.cmdCrear.Name = "cmdCrear"
         Me.cmdCrear.Size = New System.Drawing.Size(75, 23)
         Me.cmdCrear.TabIndex = 3
         Me.cmdCrear.Text = "Crear"
         Me.cmdCrear.UseVisualStyleBackColor = False
-        '
-        'dtFecha
-        '
-        Me.dtFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.dtFecha.CustomFormat = "dd/MM/yyy H:mm"
-        Me.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtFecha.Location = New System.Drawing.Point(12, 648)
-        Me.dtFecha.Name = "dtFecha"
-        Me.dtFecha.Size = New System.Drawing.Size(133, 20)
-        Me.dtFecha.TabIndex = 2
         '
         'cmdOfertas
         '
@@ -268,25 +258,12 @@ Partial Class Form1
         '
         Me.cmdMail.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.cmdMail.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdMail.Location = New System.Drawing.Point(334, 646)
+        Me.cmdMail.Location = New System.Drawing.Point(421, 647)
         Me.cmdMail.Name = "cmdMail"
         Me.cmdMail.Size = New System.Drawing.Size(75, 23)
         Me.cmdMail.TabIndex = 4
         Me.cmdMail.Text = "Leer Mail"
         Me.cmdMail.UseVisualStyleBackColor = True
-        '
-        'ListBox1
-        '
-        Me.ListBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.ListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ListBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListBox1.ForeColor = System.Drawing.Color.DimGray
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.ItemHeight = 16
-        Me.ListBox1.Location = New System.Drawing.Point(12, 401)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(218, 112)
-        Me.ListBox1.TabIndex = 1
         '
         'lstRelleno
         '
@@ -296,8 +273,8 @@ Partial Class Form1
         Me.lstRelleno.ForeColor = System.Drawing.Color.DimGray
         Me.lstRelleno.FormattingEnabled = True
         Me.lstRelleno.ItemHeight = 20
-        Me.lstRelleno.Items.AddRange(New Object() {"OFERTA", "x 2kg", "x 3kg", "x 5kg", "x 10kg", "x 2", "x 3"})
-        Me.lstRelleno.Location = New System.Drawing.Point(12, 391)
+        Me.lstRelleno.Items.AddRange(New Object() {"OFERTA", "x 2kg", "x 3kg", "x 5kg", "x 10kg", "x 2", "x 3", "x GANCHO"})
+        Me.lstRelleno.Location = New System.Drawing.Point(12, 201)
         Me.lstRelleno.Name = "lstRelleno"
         Me.lstRelleno.Size = New System.Drawing.Size(218, 240)
         Me.lstRelleno.TabIndex = 1
@@ -326,18 +303,36 @@ Partial Class Form1
         Me.chReloj.AutoSize = True
         Me.chReloj.Checked = True
         Me.chReloj.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chReloj.Location = New System.Drawing.Point(416, 652)
+        Me.chReloj.Location = New System.Drawing.Point(503, 653)
         Me.chReloj.Name = "chReloj"
         Me.chReloj.Size = New System.Drawing.Size(50, 17)
         Me.chReloj.TabIndex = 17
         Me.chReloj.Text = "Reloj"
         Me.chReloj.UseVisualStyleBackColor = True
         '
+        'mntFecha
+        '
+        Me.mntFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.mntFecha.Location = New System.Drawing.Point(12, 453)
+        Me.mntFecha.Name = "mntFecha"
+        Me.mntFecha.TabIndex = 18
+        '
+        'dtHora
+        '
+        Me.dtHora.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.dtHora.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtHora.Location = New System.Drawing.Point(20, 627)
+        Me.dtHora.Name = "dtHora"
+        Me.dtHora.Size = New System.Drawing.Size(122, 20)
+        Me.dtHora.TabIndex = 19
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1232, 676)
+        Me.Controls.Add(Me.dtHora)
+        Me.Controls.Add(Me.mntFecha)
         Me.Controls.Add(Me.chReloj)
         Me.Controls.Add(Me.chADB)
         Me.Controls.Add(Me.cmdGuardar)
@@ -346,12 +341,10 @@ Partial Class Form1
         Me.Controls.Add(Me.SplitContainer1)
         Me.Controls.Add(Me.cmdEjecutar)
         Me.Controls.Add(Me.cmdOfertas)
-        Me.Controls.Add(Me.dtFecha)
         Me.Controls.Add(Me.cmdCrear)
         Me.Controls.Add(Me.cmdMail)
         Me.Controls.Add(Me.cmdSalir)
         Me.Controls.Add(Me.lstRelleno)
-        Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.lstSucs)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Form1"
@@ -372,7 +365,6 @@ Partial Class Form1
     Friend WithEvents lstSucs As ListBox
     Friend WithEvents cmdSalir As Button
     Friend WithEvents cmdCrear As Button
-    Friend WithEvents dtFecha As DateTimePicker
     Friend WithEvents Label2 As Label
     Friend WithEvents txtProd1 As TextBox
     Friend WithEvents cmdOfertas As Button
@@ -393,9 +385,10 @@ Partial Class Form1
     Friend WithEvents cmdCargarPrecios As Button
     Friend WithEvents cmdGuardar As Button
     Friend WithEvents cmdMail As Button
-    Friend WithEvents ListBox1 As ListBox
     Friend WithEvents lstRelleno As ListBox
     Friend WithEvents tiMail As Timer
     Friend WithEvents chADB As CheckBox
     Friend WithEvents chReloj As CheckBox
+    Friend WithEvents mntFecha As MonthCalendar
+    Friend WithEvents dtHora As DateTimePicker
 End Class

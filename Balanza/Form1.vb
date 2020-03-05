@@ -1,8 +1,7 @@
-﻿Imports System.IO
-Imports System.Net.Sockets
+﻿Imports System
+Imports System.IO
 Imports System.Text
 Imports System.Text.RegularExpressions
-Imports System.Threading
 
 Public Class Form1
     Const v_Path As String = "D:\Balanza\JDataGate\kSolutions\DataGate\"
@@ -79,7 +78,7 @@ Public Class Form1
                 Me.Cursor = Cursors.WaitCursor
                 Me.Enabled = False
                 Dim suc As Integer
-                Dim f As Date = dtFecha.Value.Date
+                Dim f As Date = mntFecha.SelectionEnd.Date
                 Dim dt As DataTable
                 Dim s_info As String = v_Path & "INFO.JDG"
 
@@ -157,7 +156,7 @@ Public Class Form1
         If lstSucs.SelectedIndex > -1 Then
             Me.Cursor = Cursors.WaitCursor
             Me.Enabled = False
-            Dim f As Date = dtFecha.Value.Date
+            Dim f As Date = mntFecha.SelectionEnd.Date
             Dim fEsperar As DateTime = Date.Now.AddMinutes(2)
 
             Dim s_info As String = v_Path & "INFO.JDG"
@@ -215,9 +214,12 @@ Public Class Form1
                                                    )
                                 es.WriteLine(cm)
                             Else
+                                Dim fechaa As Date = mntFecha.SelectionEnd
+                                fechaa = fechaa.AddHours(dtHora.Value.Hour)
+                                fechaa = fechaa.AddMinutes(dtHora.Value.Minute)
                                 cm = String.Format("INSERT INTO [dbM].[dbo].[Ofertas_Balanza] ([Fecha], [CodProd], [Descripcion], [Grupo], [Pesable], [Precio], [Multi], [Final], [Guardado], [Suc]) " &
                                                     "VALUES('{0}', {1}, '{2}', {3}, {4}, {5}, {6}, {7}, 0, {8})",
-                                                   String.Format("MM/dd/yyy H:mm", dtFecha.Value),
+                                                   fechaa.ToString("MM/dd/yyy HH:mm"),
                                                    .Texto(i, .ColIndex("Prod")),
                                                    prod,
                                                    .Texto(i, .ColIndex("Grupo")),
@@ -325,9 +327,9 @@ Public Class Form1
                 Case 0
                     Dim s As String
                     If lstSucs.SelectedIndex > -1 Then
-                        s = String.Format("(SELECT TOP 1 P.Precio FROM dbPrecios.dbo.Precios P WHERE CodSuc={0} AND Fecha<={1} AND P.CodProd=CodDeProd ORDER BY Fecha DESC)", lstSucs.Text.Codigo_Seleccionado, dtFecha.Value.Fecha_SQL)
+                        s = String.Format("(SELECT TOP 1 P.Precio FROM dbPrecios.dbo.Precios P WHERE CodSuc={0} AND Fecha<={1} AND P.CodProd=CodDeProd ORDER BY Fecha DESC)", lstSucs.Text.Codigo_Seleccionado, mntFecha.SelectionEnd.Fecha_SQL)
                     Else
-                        s = String.Format("(SELECT TOP 1 P.Precio FROM dbPrecios.dbo.Precios P WHERE Fecha<={0} AND P.CodProd=CodDeProd ORDER BY Fecha DESC)", dtFecha.Value.Fecha_SQL)
+                        s = String.Format("(SELECT TOP 1 P.Precio FROM dbPrecios.dbo.Precios P WHERE Fecha<={0} AND P.CodProd=CodDeProd ORDER BY Fecha DESC)", mntFecha.SelectionEnd.Fecha_SQL)
                     End If
                     Dim dt As DataTable = dbM.Datos(String.Format("SELECT CodDeProd Prod, Nombre, Grupo, Pesable, Multiplicador Multi, {0} Precio FROM vw_AliasBalanza WHERE Balanza={1}", s, a))
                     If dt.Rows.Count Then
@@ -475,7 +477,7 @@ Public Class Form1
     End Sub
 
     Private Sub CmdCargarPrecios_Click(sender As Object, e As EventArgs) Handles cmdCargarPrecios.Click, cmdGuardar.Click
-        Dim s As String = String.Format("(SELECT TOP 1 P.Precio FROM dbPrecios.dbo.Precios P WHERE CodSuc={0} AND Fecha<={1} AND P.CodProd=CodDeProd ORDER BY Fecha DESC)", lstSucs.Text.Codigo_Seleccionado, dtFecha.Value.Fecha_SQL)
+        Dim s As String = String.Format("(SELECT TOP 1 P.Precio FROM dbPrecios.dbo.Precios P WHERE CodSuc={0} AND Fecha<={1} AND P.CodProd=CodDeProd ORDER BY Fecha DESC)", lstSucs.Text.Codigo_Seleccionado, mntFecha.SelectionEnd.Fecha_SQL)
         Dim dt As DataTable = dbM.Datos(String.Format("SELECT Balanza Prod, Nombre, Grupo, Pesable, {0} Precio, Multiplicador Multi, 0.0 Final FROM vw_AliasBalanza", s))
 
         grdPrecios.MostrarDatos(dt, False, True)
@@ -494,6 +496,11 @@ Public Class Form1
 
     Private Sub chReloj_CheckedChanged(sender As Object, e As EventArgs) Handles chReloj.CheckedChanged
         tiMail.Enabled = chReloj.Checked
+    End Sub
+
+    Private Sub lstRelleno_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstRelleno.SelectedIndexChanged
+        grdPrecios.Focus()
+        SendKeys.Send("+")
     End Sub
 End Class
 
