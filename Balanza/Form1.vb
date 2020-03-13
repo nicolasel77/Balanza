@@ -156,7 +156,7 @@ Public Class Form1
         If lstSucs.SelectedIndex > -1 Then
             Me.Cursor = Cursors.WaitCursor
             Me.Enabled = False
-            Dim f As Date = mntFecha.SelectionEnd.Date
+            Dim f As Date = mntFecha.SelectionStart.Date
             Dim fEsperar As DateTime = Date.Now.AddMinutes(2)
 
             Dim s_info As String = v_Path & "INFO.JDG"
@@ -258,6 +258,10 @@ Public Class Form1
     End Sub
 
     Private Sub tiMail_Tick(sender As Object, e As EventArgs) Handles tiMail.Tick
+        Leer_DB()
+    End Sub
+
+    Private Sub Leer_DB()
         Dim dt As DataTable = dbM.Datos($"SELECT * FROM Ofertas_Balanza WHERE Guardado=0 AND Fecha < '{Date.Now.ToString("MM/dd/yyy H:mm")}' ORDER BY Fecha")
 
         Dim s_info As String = v_Path & "INFO.JDG"
@@ -319,8 +323,8 @@ Public Class Form1
             dbM.EjecutarCadena($"UPDATE Ofertas_Balanza SET Guardado=1 WHERE Guardado=0 AND Fecha < '{Date.Now.ToString("MM/dd/yyy H:mm")}'")
         End If
         es.Close()
-
     End Sub
+
     Private Sub grdPrecios_Editado(f As Short, c As Short, a As Object) Handles grdPrecios.Editado
         With grdPrecios
             Select Case c
@@ -476,7 +480,7 @@ Public Class Form1
         Process.Start(v_Path & "JDataGate.exe")
     End Sub
 
-    Private Sub CmdCargarPrecios_Click(sender As Object, e As EventArgs) Handles cmdCargarPrecios.Click, cmdGuardar.Click
+    Private Sub CmdCargarPrecios_Click(sender As Object, e As EventArgs) Handles cmdCargarPrecios.Click
         Dim s As String = String.Format("(SELECT TOP 1 P.Precio FROM dbPrecios.dbo.Precios P WHERE CodSuc={0} AND Fecha<={1} AND P.CodProd=CodDeProd ORDER BY Fecha DESC)", lstSucs.Text.Codigo_Seleccionado, mntFecha.SelectionEnd.Fecha_SQL)
         Dim dt As DataTable = dbM.Datos(String.Format("SELECT Balanza Prod, Nombre, Grupo, Pesable, {0} Precio, Multiplicador Multi, 0.0 Final FROM vw_AliasBalanza", s))
 
@@ -501,6 +505,10 @@ Public Class Form1
     Private Sub lstRelleno_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstRelleno.SelectedIndexChanged
         grdPrecios.Focus()
         SendKeys.Send("+")
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Leer_DB()
     End Sub
 End Class
 

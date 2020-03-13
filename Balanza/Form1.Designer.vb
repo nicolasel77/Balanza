@@ -44,6 +44,7 @@ Partial Class Form1
         Me.chReloj = New System.Windows.Forms.CheckBox()
         Me.mntFecha = New System.Windows.Forms.MonthCalendar()
         Me.dtHora = New System.Windows.Forms.DateTimePicker()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -149,7 +150,7 @@ Partial Class Form1
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Location = New System.Drawing.Point(736, 645)
+        Me.Button1.Location = New System.Drawing.Point(792, 647)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(61, 23)
         Me.Button1.TabIndex = 11
@@ -236,7 +237,7 @@ Partial Class Form1
         '
         Me.cmdCargarPrecios.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdCargarPrecios.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdCargarPrecios.Location = New System.Drawing.Point(568, 645)
+        Me.cmdCargarPrecios.Location = New System.Drawing.Point(624, 647)
         Me.cmdCargarPrecios.Name = "cmdCargarPrecios"
         Me.cmdCargarPrecios.Size = New System.Drawing.Size(78, 23)
         Me.cmdCargarPrecios.TabIndex = 11
@@ -247,7 +248,7 @@ Partial Class Form1
         '
         Me.cmdGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdGuardar.Location = New System.Drawing.Point(652, 645)
+        Me.cmdGuardar.Location = New System.Drawing.Point(708, 647)
         Me.cmdGuardar.Name = "cmdGuardar"
         Me.cmdGuardar.Size = New System.Drawing.Size(78, 23)
         Me.cmdGuardar.TabIndex = 11
@@ -326,6 +327,17 @@ Partial Class Form1
         Me.dtHora.Size = New System.Drawing.Size(122, 20)
         Me.dtHora.TabIndex = 19
         '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button2.Location = New System.Drawing.Point(559, 647)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(59, 23)
+        Me.Button2.TabIndex = 11
+        Me.Button2.Text = "Reloj"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -336,6 +348,7 @@ Partial Class Form1
         Me.Controls.Add(Me.chReloj)
         Me.Controls.Add(Me.chADB)
         Me.Controls.Add(Me.cmdGuardar)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.cmdCargarPrecios)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.SplitContainer1)
@@ -391,4 +404,5 @@ Partial Class Form1
     Friend WithEvents chReloj As CheckBox
     Friend WithEvents mntFecha As MonthCalendar
     Friend WithEvents dtHora As DateTimePicker
+    Friend WithEvents Button2 As Button
 End Class
