@@ -28,7 +28,7 @@ Public Class Form1
             .ColW(6) = 60
             .ColW(7) = 60
 
-            Dim n() As Integer = {13, 32, 42, 43, 45, 47, 107, 112, 123}
+            Dim n() As Integer = {13, 32, 42, 43, 45, 46, 47, 106, 107, 109, 111, 112, 123}
             .TeclasManejadas = n
         End With
         Dim dt As DataTable = dbM.Datos("SELECT * FROM vw_AliasBalanza WHERE CodDeProd=-1")
@@ -214,7 +214,7 @@ Public Class Form1
                                                    )
                                 es.WriteLine(cm)
                             Else
-                                Dim fechaa As Date = mntFecha.SelectionEnd
+                                Dim fechaa As Date = f
                                 fechaa = fechaa.AddHours(dtHora.Value.Hour)
                                 fechaa = fechaa.AddMinutes(dtHora.Value.Minute)
                                 cm = String.Format("INSERT INTO [dbM].[dbo].[Ofertas_Balanza] ([Fecha], [CodProd], [Descripcion], [Grupo], [Pesable], [Precio], [Multi], [Final], [Guardado], [Suc]) " &
@@ -451,15 +451,38 @@ Public Class Form1
                     End If
                     .Texto(.Row, .ColIndex("Descripcion")) = S
                     .ActivarCelda(.Row, .ColIndex("Precio"))
+                Case Keys.Subtract
+                    If .Row = .Rows - 1 Then .AgregarFila()
+                    .ActivarCelda(.Row + 1, 0)
+                Case Keys.Divide
+                    If IsNumeric(.Texto(.Row, 0)) Then
+                        Dim S As String = dbM.BuscarDato("SELECT Nombre FROM vw_AliasBalanza WHERE Balanza=" & .Texto(.Row, .ColIndex("Prod")))
+
+                        lstRelleno.Anterior
+                        S &= " " & lstRelleno.Text
+
+                        .Texto(.Row, .ColIndex("Descripcion")) = S
+                        .ActivarCelda(.Row, .ColIndex("Precio"))
+                    End If
+                Case Keys.Multiply
+                    If IsNumeric(.Texto(.Row, 0)) Then
+                        Dim S As String = dbM.BuscarDato("SELECT Nombre FROM vw_AliasBalanza WHERE Balanza=" & .Texto(.Row, .ColIndex("Prod")))
+
+                        lstRelleno.Siguiente
+                        S &= " " & lstRelleno.Text
+
+                        .Texto(.Row, .ColIndex("Descripcion")) = S
+                        .ActivarCelda(.Row, .ColIndex("Precio"))
+                    End If
                 Case Keys.Enter
                     If .Col = .ColIndex("Final") Then
-                        If .Texto(.Row + 1, 0) <> 0 Then
-                            .ActivarCelda(.Row + 1, 0)
-                        Else
-                            If .Row = .Rows - 1 Then .AgregarFila()
-                            .ActivarCelda(.Row, .Col + 1)
-                        End If
+                        If .Row = .Rows - 1 Then .AgregarFila()
+                        .ActivarCelda(.Row + 1, 0)
+                    ElseIf .Col < .ColIndex("Final") Then
+                        .ActivarCelda(.Row, .Col + 1)
                     End If
+                Case Keys.Delete
+                    .BorrarFila(.Row)
                 Case 32 '2 en el teclado no numerico
                     Dim multi As Integer = .Texto(.Row, .ColIndex("Multi"))
                     If multi = 0 Then
@@ -481,8 +504,7 @@ Public Class Form1
     End Sub
 
     Private Sub CmdCargarPrecios_Click(sender As Object, e As EventArgs) Handles cmdCargarPrecios.Click
-        Dim s As String = String.Format("(SELECT TOP 1 P.Precio FROM dbPrecios.dbo.Precios P WHERE CodSuc={0} AND Fecha<={1} AND P.CodProd=CodDeProd ORDER BY Fecha DESC)", lstSucs.Text.Codigo_Seleccionado, mntFecha.SelectionEnd.Fecha_SQL)
-        Dim dt As DataTable = dbM.Datos(String.Format("SELECT Balanza Prod, Nombre, Grupo, Pesable, {0} Precio, Multiplicador Multi, 0.0 Final FROM vw_AliasBalanza", s))
+        Dim dt As DataTable = dbM.Datos(String.Format("SELECT p.CodProd Prod, b.Nombre, b.Grupo, b.Pesable, p.Precio, b.Multiplicador Multi, 0.0 Final FROM vw_Precios p INNER JOIN dbM.dbo.vw_AliasBalanza b ON p.CodProd=b.CodDeProd WHERE CodSuc={0} AND Fecha={1} GROUP BY p.CodProd, b.Nombre, b.Grupo, b.Pesable, b.Multiplicador, p.Precio", lstSucs.Codigo_Seleccionado, mntFecha.SelectionStart.Fecha_SQL))
 
         grdPrecios.MostrarDatos(dt, False, True)
 
@@ -509,6 +531,10 @@ Public Class Form1
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Leer_DB()
+    End Sub
+
+    Private Sub mntFecha_DateChanged(sender As Object, e As DateRangeEventArgs) Handles mntFecha.DateChanged
+        Me.Text = "Fecha: " & mntFecha.SelectionStart & " " & dtHora.Text
     End Sub
 End Class
 

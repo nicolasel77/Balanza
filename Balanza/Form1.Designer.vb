@@ -274,7 +274,7 @@ Partial Class Form1
         Me.lstRelleno.ForeColor = System.Drawing.Color.DimGray
         Me.lstRelleno.FormattingEnabled = True
         Me.lstRelleno.ItemHeight = 20
-        Me.lstRelleno.Items.AddRange(New Object() {"OFERTA", "x 2kg", "x 3kg", "x 5kg", "x 10kg", "x 2", "x 3", "x GANCHO"})
+        Me.lstRelleno.Items.AddRange(New Object() {"OFERTA", "x 2kg", "x 3kg", "x 5kg", "x 10kg", "x 2", "x 3", "x 4", "x GANCHO", "x CAJA", "x PIEZA"})
         Me.lstRelleno.Location = New System.Drawing.Point(12, 201)
         Me.lstRelleno.Name = "lstRelleno"
         Me.lstRelleno.Size = New System.Drawing.Size(218, 240)
@@ -315,6 +315,7 @@ Partial Class Form1
         '
         Me.mntFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.mntFecha.Location = New System.Drawing.Point(12, 453)
+        Me.mntFecha.MaxSelectionCount = 1
         Me.mntFecha.Name = "mntFecha"
         Me.mntFecha.TabIndex = 18
         '
