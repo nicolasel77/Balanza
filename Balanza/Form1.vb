@@ -536,5 +536,17 @@ Public Class Form1
     Private Sub mntFecha_DateChanged(sender As Object, e As DateRangeEventArgs) Handles mntFecha.DateChanged
         Me.Text = "Fecha: " & mntFecha.SelectionStart & " " & dtHora.Text
     End Sub
+
+    Private Sub cmdAgregaro_Click(sender As Object, e As EventArgs) Handles cmdAgregaro.Click
+        If IsNumeric(txtSistema.Text) And IsNumeric(txtBalanza.Text) And IsNumeric(txtMulti.Text) Then
+            Dim s As String = "INSERT INTO ProdAlias_Balanza(Sistema, Balanza, Multiplicador, Pesable) VALUES({0}, {1}, {2}, {3})"
+            If chPesable.Checked Then
+                s = String.Format(s, txtSistema.Text, txtBalanza.Text, txtMulti.Text, "1")
+            Else
+                s = String.Format(s, txtSistema.Text, txtBalanza.Text, txtMulti.Text, "0")
+            End If
+            dbM.EjecutarCadena(s)
+        End If
+    End Sub
 End Class
 
