@@ -33,6 +33,8 @@ Partial Class Form1
         Me.txtBuscador = New System.Windows.Forms.TextBox()
         Me.cmdEjecutar = New System.Windows.Forms.Button()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.grdOfertas = New Grilla2.SpeedGrilla()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.grdVerPrecios = New Grilla2.SpeedGrilla()
         Me.grdPrecios = New Grilla2.SpeedGrilla()
         Me.cmdCargarPrecios = New System.Windows.Forms.Button()
@@ -52,10 +54,23 @@ Partial Class Form1
         Me.chPesable = New System.Windows.Forms.CheckBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.cmdActualizar = New System.Windows.Forms.Button()
+        Me.grdAlias = New Grilla2.SpeedGrilla()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
+        Me.SplitContainer3 = New System.Windows.Forms.SplitContainer()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
+        CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer2.Panel1.SuspendLayout()
+        Me.SplitContainer2.Panel2.SuspendLayout()
+        Me.SplitContainer2.SuspendLayout()
+        CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer3.Panel1.SuspendLayout()
+        Me.SplitContainer3.Panel2.SuspendLayout()
+        Me.SplitContainer3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -116,7 +131,7 @@ Partial Class Form1
         Me.cmdOfertas.Name = "cmdOfertas"
         Me.cmdOfertas.Size = New System.Drawing.Size(78, 23)
         Me.cmdOfertas.TabIndex = 11
-        Me.cmdOfertas.Text = "Actualizar"
+        Me.cmdOfertas.Text = "Insertar"
         Me.cmdOfertas.UseVisualStyleBackColor = True
         '
         'Button1
@@ -161,8 +176,8 @@ Partial Class Form1
         '
         'SplitContainer1.Panel1
         '
+        Me.SplitContainer1.Panel1.Controls.Add(Me.SplitContainer3)
         Me.SplitContainer1.Panel1.Controls.Add(Me.txtBuscador)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.grdVerPrecios)
         '
         'SplitContainer1.Panel2
         '
@@ -172,13 +187,54 @@ Partial Class Form1
         Me.SplitContainer1.SplitterWidth = 8
         Me.SplitContainer1.TabIndex = 16
         '
+        'grdOfertas
+        '
+        Me.grdOfertas.AllowMerging = C1.Win.C1FlexGrid.AllowMergingEnum.None
+        Me.grdOfertas.AllowSorting = C1.Win.C1FlexGrid.AllowSortingEnum.SingleColumn
+        Me.grdOfertas.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grdOfertas.AutoResize = False
+        Me.grdOfertas.bColor = System.Drawing.SystemColors.Window
+        Me.grdOfertas.bColorSel = System.Drawing.SystemColors.Highlight
+        Me.grdOfertas.bFColor = System.Drawing.SystemColors.WindowText
+        Me.grdOfertas.bFColorSel = System.Drawing.SystemColors.HighlightText
+        Me.grdOfertas.Col = 0
+        Me.grdOfertas.Cols = 10
+        Me.grdOfertas.DataMember = ""
+        Me.grdOfertas.DataSource = Nothing
+        Me.grdOfertas.EnableEdicion = True
+        Me.grdOfertas.Encabezado = ""
+        Me.grdOfertas.fColor = System.Drawing.SystemColors.Control
+        Me.grdOfertas.FixCols = 0
+        Me.grdOfertas.FixRows = 0
+        Me.grdOfertas.FuenteEncabezado = Nothing
+        Me.grdOfertas.FuentePieDePagina = Nothing
+        Me.grdOfertas.KeyActionEnter = C1.Win.C1FlexGrid.KeyActionEnum.None
+        Me.grdOfertas.Location = New System.Drawing.Point(3, 21)
+        Me.grdOfertas.MenuActivado = False
+        Me.grdOfertas.Name = "grdOfertas"
+        Me.grdOfertas.PieDePagina = "" & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & "Page {0} of {1}"
+        Me.grdOfertas.PintarFilaSel = True
+        Me.grdOfertas.Redraw = True
+        Me.grdOfertas.Row = -2
+        Me.grdOfertas.Rows = 0
+        Me.grdOfertas.Size = New System.Drawing.Size(434, 155)
+        Me.grdOfertas.TabIndex = 1
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(3, 5)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(89, 13)
+        Me.Label5.TabIndex = 18
+        Me.Label5.Text = "Ofertas Cargadas"
+        '
         'grdVerPrecios
         '
         Me.grdVerPrecios.AllowMerging = C1.Win.C1FlexGrid.AllowMergingEnum.None
         Me.grdVerPrecios.AllowSorting = C1.Win.C1FlexGrid.AllowSortingEnum.SingleColumn
-        Me.grdVerPrecios.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grdVerPrecios.AutoResize = False
         Me.grdVerPrecios.bColor = System.Drawing.SystemColors.Window
         Me.grdVerPrecios.bColorSel = System.Drawing.SystemColors.Highlight
@@ -188,6 +244,7 @@ Partial Class Form1
         Me.grdVerPrecios.Cols = 10
         Me.grdVerPrecios.DataMember = ""
         Me.grdVerPrecios.DataSource = Nothing
+        Me.grdVerPrecios.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grdVerPrecios.EnableEdicion = True
         Me.grdVerPrecios.Encabezado = ""
         Me.grdVerPrecios.fColor = System.Drawing.SystemColors.Control
@@ -196,7 +253,7 @@ Partial Class Form1
         Me.grdVerPrecios.FuenteEncabezado = Nothing
         Me.grdVerPrecios.FuentePieDePagina = Nothing
         Me.grdVerPrecios.KeyActionEnter = C1.Win.C1FlexGrid.KeyActionEnum.None
-        Me.grdVerPrecios.Location = New System.Drawing.Point(3, 19)
+        Me.grdVerPrecios.Location = New System.Drawing.Point(0, 0)
         Me.grdVerPrecios.MenuActivado = False
         Me.grdVerPrecios.Name = "grdVerPrecios"
         Me.grdVerPrecios.PieDePagina = "" & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & "Page {0} of {1}"
@@ -204,7 +261,7 @@ Partial Class Form1
         Me.grdVerPrecios.Redraw = True
         Me.grdVerPrecios.Row = 0
         Me.grdVerPrecios.Rows = 50
-        Me.grdVerPrecios.Size = New System.Drawing.Size(434, 654)
+        Me.grdVerPrecios.Size = New System.Drawing.Size(440, 293)
         Me.grdVerPrecios.TabIndex = 0
         '
         'grdPrecios
@@ -350,9 +407,9 @@ Partial Class Form1
         '
         Me.cmdAgregaro.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdAgregaro.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmdAgregaro.Location = New System.Drawing.Point(817, 619)
+        Me.cmdAgregaro.Location = New System.Drawing.Point(1066, 616)
         Me.cmdAgregaro.Name = "cmdAgregaro"
-        Me.cmdAgregaro.Size = New System.Drawing.Size(78, 23)
+        Me.cmdAgregaro.Size = New System.Drawing.Size(67, 23)
         Me.cmdAgregaro.TabIndex = 5
         Me.cmdAgregaro.Text = "Agregar"
         Me.cmdAgregaro.UseVisualStyleBackColor = True
@@ -361,7 +418,7 @@ Partial Class Form1
         '
         Me.txtSistema.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtSistema.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtSistema.Location = New System.Drawing.Point(901, 624)
+        Me.txtSistema.Location = New System.Drawing.Point(744, 624)
         Me.txtSistema.Name = "txtSistema"
         Me.txtSistema.Size = New System.Drawing.Size(74, 13)
         Me.txtSistema.TabIndex = 6
@@ -370,7 +427,7 @@ Partial Class Form1
         '
         Me.txtBalanza.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtBalanza.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtBalanza.Location = New System.Drawing.Point(981, 624)
+        Me.txtBalanza.Location = New System.Drawing.Point(824, 624)
         Me.txtBalanza.Name = "txtBalanza"
         Me.txtBalanza.Size = New System.Drawing.Size(74, 13)
         Me.txtBalanza.TabIndex = 7
@@ -379,7 +436,7 @@ Partial Class Form1
         '
         Me.txtMulti.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtMulti.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtMulti.Location = New System.Drawing.Point(1061, 624)
+        Me.txtMulti.Location = New System.Drawing.Point(904, 624)
         Me.txtMulti.Name = "txtMulti"
         Me.txtMulti.Size = New System.Drawing.Size(74, 13)
         Me.txtMulti.TabIndex = 8
@@ -392,7 +449,7 @@ Partial Class Form1
         Me.chPesable.Checked = True
         Me.chPesable.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chPesable.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.chPesable.Location = New System.Drawing.Point(1141, 622)
+        Me.chPesable.Location = New System.Drawing.Point(984, 622)
         Me.chPesable.Name = "chPesable"
         Me.chPesable.Size = New System.Drawing.Size(62, 17)
         Me.chPesable.TabIndex = 9
@@ -403,7 +460,7 @@ Partial Class Form1
         '
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(898, 602)
+        Me.Label3.Location = New System.Drawing.Point(741, 602)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(44, 13)
         Me.Label3.TabIndex = 18
@@ -413,11 +470,104 @@ Partial Class Form1
         '
         Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(978, 602)
+        Me.Label4.Location = New System.Drawing.Point(821, 602)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(45, 13)
         Me.Label4.TabIndex = 18
         Me.Label4.Text = "Balanza"
+        '
+        'cmdActualizar
+        '
+        Me.cmdActualizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmdActualizar.Location = New System.Drawing.Point(1153, 616)
+        Me.cmdActualizar.Name = "cmdActualizar"
+        Me.cmdActualizar.Size = New System.Drawing.Size(67, 23)
+        Me.cmdActualizar.TabIndex = 5
+        Me.cmdActualizar.Text = "Actualizar"
+        Me.cmdActualizar.UseVisualStyleBackColor = True
+        '
+        'grdAlias
+        '
+        Me.grdAlias.AllowMerging = C1.Win.C1FlexGrid.AllowMergingEnum.None
+        Me.grdAlias.AllowSorting = C1.Win.C1FlexGrid.AllowSortingEnum.SingleColumn
+        Me.grdAlias.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grdAlias.AutoResize = False
+        Me.grdAlias.bColor = System.Drawing.SystemColors.Window
+        Me.grdAlias.bColorSel = System.Drawing.SystemColors.Highlight
+        Me.grdAlias.bFColor = System.Drawing.SystemColors.WindowText
+        Me.grdAlias.bFColorSel = System.Drawing.SystemColors.HighlightText
+        Me.grdAlias.Col = 0
+        Me.grdAlias.Cols = 10
+        Me.grdAlias.DataMember = ""
+        Me.grdAlias.DataSource = Nothing
+        Me.grdAlias.EnableEdicion = True
+        Me.grdAlias.Encabezado = ""
+        Me.grdAlias.fColor = System.Drawing.SystemColors.Control
+        Me.grdAlias.FixCols = 0
+        Me.grdAlias.FixRows = 0
+        Me.grdAlias.FuenteEncabezado = Nothing
+        Me.grdAlias.FuentePieDePagina = Nothing
+        Me.grdAlias.KeyActionEnter = C1.Win.C1FlexGrid.KeyActionEnum.None
+        Me.grdAlias.Location = New System.Drawing.Point(3, 19)
+        Me.grdAlias.MenuActivado = False
+        Me.grdAlias.Name = "grdAlias"
+        Me.grdAlias.PieDePagina = "" & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & "Page {0} of {1}"
+        Me.grdAlias.PintarFilaSel = True
+        Me.grdAlias.Redraw = True
+        Me.grdAlias.Row = -2
+        Me.grdAlias.Rows = 0
+        Me.grdAlias.Size = New System.Drawing.Size(428, 75)
+        Me.grdAlias.TabIndex = 19
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(3, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(77, 13)
+        Me.Label6.TabIndex = 20
+        Me.Label6.Text = "Alias Cargados"
+        '
+        'SplitContainer2
+        '
+        Me.SplitContainer2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer2.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainer2.Name = "SplitContainer2"
+        Me.SplitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal
+        '
+        'SplitContainer2.Panel1
+        '
+        Me.SplitContainer2.Panel1.Controls.Add(Me.grdVerPrecios)
+        '
+        'SplitContainer2.Panel2
+        '
+        Me.SplitContainer2.Panel2.Controls.Add(Me.grdAlias)
+        Me.SplitContainer2.Panel2.Controls.Add(Me.Label6)
+        Me.SplitContainer2.Size = New System.Drawing.Size(440, 391)
+        Me.SplitContainer2.SplitterDistance = 293
+        Me.SplitContainer2.TabIndex = 21
+        '
+        'SplitContainer3
+        '
+        Me.SplitContainer3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer3.Location = New System.Drawing.Point(0, 13)
+        Me.SplitContainer3.Name = "SplitContainer3"
+        Me.SplitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal
+        '
+        'SplitContainer3.Panel1
+        '
+        Me.SplitContainer3.Panel1.Controls.Add(Me.SplitContainer2)
+        '
+        'SplitContainer3.Panel2
+        '
+        Me.SplitContainer3.Panel2.Controls.Add(Me.Label5)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.grdOfertas)
+        Me.SplitContainer3.Size = New System.Drawing.Size(440, 574)
+        Me.SplitContainer3.SplitterDistance = 391
+        Me.SplitContainer3.TabIndex = 22
         '
         'Form1
         '
@@ -434,6 +584,7 @@ Partial Class Form1
         Me.Controls.Add(Me.mntFecha)
         Me.Controls.Add(Me.chReloj)
         Me.Controls.Add(Me.chADB)
+        Me.Controls.Add(Me.cmdActualizar)
         Me.Controls.Add(Me.cmdAgregaro)
         Me.Controls.Add(Me.cmdGuardar)
         Me.Controls.Add(Me.Button2)
@@ -457,6 +608,16 @@ Partial Class Form1
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
+        Me.SplitContainer2.Panel1.ResumeLayout(False)
+        Me.SplitContainer2.Panel2.ResumeLayout(False)
+        Me.SplitContainer2.Panel2.PerformLayout()
+        CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer2.ResumeLayout(False)
+        Me.SplitContainer3.Panel1.ResumeLayout(False)
+        Me.SplitContainer3.Panel2.ResumeLayout(False)
+        Me.SplitContainer3.Panel2.PerformLayout()
+        CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer3.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -500,4 +661,11 @@ Partial Class Form1
     Friend WithEvents chPesable As CheckBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents grdOfertas As Grilla2.SpeedGrilla
+    Friend WithEvents Label5 As Label
+    Friend WithEvents cmdActualizar As Button
+    Friend WithEvents grdAlias As Grilla2.SpeedGrilla
+    Friend WithEvents Label6 As Label
+    Friend WithEvents SplitContainer3 As SplitContainer
+    Friend WithEvents SplitContainer2 As SplitContainer
 End Class

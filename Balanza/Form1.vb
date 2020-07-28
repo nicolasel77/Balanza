@@ -136,7 +136,12 @@ Public Class Form1
     Private Sub txtBuscador_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtBuscador.TextChanged
         With txtBuscador
             Dim s As String
+            grdVerPrecios.Filas.Count = 0
+            grdOfertas.Filas.Count = 0
+            grdAlias.Filas.Count = 0
             grdVerPrecios.Filas.Count = 1
+            grdOfertas.Filas.Count = 1
+            grdAlias.Filas.Count = 1
             If .Text.Length Then
                 If IsNumeric(.Text) Then
                     s = String.Format("SELECT * FROM vw_AliasBalanza WHERE Nombre like '%{0}%' OR CodDeProd={0} OR Balanza={0} ORDER BY CodDeProd", txtBuscador.Text)
@@ -147,6 +152,21 @@ Public Class Form1
                 grdVerPrecios.MostrarDatos(dt, True)
                 grdVerPrecios.AutosizeAll()
 
+                If IsNumeric(.Text) Then
+                    s = String.Format("SELECT TOP 100 * FROM Ofertas_Balanza WHERE Descripcion like '%{0}%' OR CodProd={0} ORDER BY Fecha DESC, CodProd", txtBuscador.Text)
+                Else
+                    s = String.Format("SELECT * FROM Ofertas_Balanza WHERE Descripcion like '%{0}%' ORDER BY Fecha DESC, CodProd", txtBuscador.Text)
+                End If
+                dt = dbM.Datos(s)
+                grdOfertas.MostrarDatos(dt, True)
+                grdOfertas.AutosizeAll()
+
+                If IsNumeric(.Text) Then
+                    s = String.Format("SELECT * FROM ProdAlias_Balanza WHERE Sistema={0} OR Balanza={0} ORDER BY Sistema, Balanza", txtBuscador.Text)
+                    dt = dbM.Datos(s)
+                    grdAlias.MostrarDatos(dt, True)
+                    grdAlias.AutosizeAll()
+                End If
             End If
 
         End With
@@ -546,6 +566,28 @@ Public Class Form1
                 s = String.Format(s, txtSistema.Text, txtBalanza.Text, txtMulti.Text, "0")
             End If
             dbM.EjecutarCadena(s)
+            txtBalanza.Text = ""
+            txtSistema.Text = ""
+            txtMulti.Text = ""
+
+        End If
+    End Sub
+
+    Private Sub cmdActualizar_Click(sender As Object, e As EventArgs) Handles cmdActualizar.Click
+        If IsNumeric(txtSistema.Text) And IsNumeric(txtBalanza.Text) And IsNumeric(txtMulti.Text) And IsNumeric(txtBuscador.Text) Then
+            Dim s As String = "UPDATE ProdAlias_Balanza SET Sistema={0}, Balanza={1}, Multiplicador={2}, Pesable={3} WHERE Balanza={4}"
+            If chPesable.Checked Then
+                s = String.Format(s, txtSistema.Text, txtBalanza.Text, txtMulti.Text, "1", txtBuscador.Text)
+            Else
+                s = String.Format(s, txtSistema.Text, txtBalanza.Text, txtMulti.Text, "0", txtBuscador.Text)
+            End If
+            dbM.EjecutarCadena(s)
+            s = $"UPDATE Productos SET Pesable={FormatearValorAlCornudoDeSql(chPesable.Checked)} WHERE CodDeProd={txtBuscador.Text}"
+            dbM.EjecutarCadena(s)
+            txtBalanza.Text = ""
+            txtSistema.Text = ""
+            txtMulti.Text = ""
+
         End If
     End Sub
 End Class
